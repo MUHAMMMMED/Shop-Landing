@@ -1,0 +1,465 @@
+.Desktop-product-details {
+  float: left;
+  padding: 0 20px;
+  width: 50%;
+
+}
+
+.Desktop-product-titel {
+  padding-top: 50px;
+  font-size: 35px;
+  line-height: 33.6px;
+  color: #000;
+  text-align: center;
+  float: left;
+  width: 100%;
+}
+
+.Desktop-best {
+  margin-top: 15px;
+  width: 100%;
+  float: left;
+}
+
+
+.Desktop-best-seller {
+  float: left;
+  margin-top: 0px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 11px;
+  border: 2px solid #000;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.Desktop-product-status {
+  margin-top: 5px;
+  float: left;
+
+}
+
+.Desktop-product-status-content {
+  float: left;
+  margin-left: 5px;
+  font-size: 20px;
+  color: #9081f6;
+  animation: tf-ani-flash 2s infinite;
+}
+
+@keyframes tf-ani-flash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.Desktop-selling-fast {
+  margin-top: 5px;
+  float: left;
+}
+
+.Desktop-price-section {
+  padding-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.Desktop-price {
+  font-size: 24px;
+  color: #9081f6;
+  font-weight: 700;
+  float: right;
+
+}
+
+
+.rtl .Desktop-priceDiscount {
+  text-align: right;
+  direction: rtl;
+  float: right;
+}
+
+.ltr .Desktop-priceDiscount {
+  text-align: left;
+  direction: ltr;
+  float: left;
+}
+
+
+
+.Desktop-original-price {
+  text-decoration: line-through;
+  color: grey;
+
+}
+
+.Desktop-discount {
+  background-color: #000;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 50px;
+
+}
+
+.Mobile-viewers {
+  margin-top: 5px;
+}
+
+.Desktop-description {
+  padding: 5px;
+  margin-top: 5px;
+  line-height: 30px;
+
+}
+
+.Desktop-countdown-timer {
+  text-align: center;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 2px solid #9081f6;
+}
+
+.Desktop-countdown-timer-p {
+  color: #000;
+  padding-bottom: 5px;
+}
+
+.Desktop-product-status-Alarm {
+  margin-left: 0px;
+  font-size: 20px;
+  animation: tf-ani-flash 2s infinite;
+}
+
+.Desktop-countdown-timer-time {
+  padding-top: 15px;
+  color: #9081f6;
+  font-weight: 700;
+
+}
+
+.Desktop-quantity {
+  width: 100%;
+
+}
+
+.rtl .Desktop-quantity {
+  text-align: right;
+  direction: rtl;
+}
+
+.ltr .Desktop-quantity {
+  text-align: left;
+  direction: ltr;
+}
+
+
+.Desktop-color-selector,
+.Desktop-size-selector {
+  margin-top: 10px;
+}
+
+
+
+.Desktop-color-option {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+}
+
+.Desktop-color-option.beige {
+  background-color: beige;
+}
+
+.Desktop-color-option.black {
+  background-color: black;
+}
+
+.Desktop-color-option.blue {
+  background-color: blue;
+}
+
+.Desktop-size-option {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+}
+
+.Desktop-size-option.selected {
+  background-color: black;
+  color: white;
+}
+
+.Desktop-quantity-selector {
+  display: flex;
+  justify-content: left;
+  margin: 10px auto;
+  padding: 0px;
+  border-radius: 8px;
+
+
+}
+
+.Desktop-quantity-but {
+  border-radius: 5px;
+  background-color: #9081f6;
+}
+
+.Desktop-quantity-button {
+  background-color: #9081f6;
+  border: 2px solid #9081f6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  height: 40px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.Desktop-quantity-button:hover {
+  background-color: #9081f6;
+
+}
+
+.Desktop-quantity-value {
+  margin: 0 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  padding: 8px;
+}
+
+.Desktop-button {
+  float: right;
+  width: 100%;
+  margin-top: 15px;
+
+}
+
+.Desktop-Sell-Row-name {
+  float: right;
+  width: 49%;
+}
+
+.Desktop-Sell-Row-price {
+  float: left;
+  width: 49%;
+}
+
+
+.Desktop-Sell-button-pay {
+  border: 2px solid #9081f6;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 11px 0;
+  text-align: center;
+  width: 100%;
+  background-color: #9081f6;
+  color: #fff;
+}
+
+.Desktop-Sell-button-btn {
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 11px 0;
+  text-align: center;
+  width: 100%;
+
+}
+
+.Desktop-favorite-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+
+
+
+.Desktop-quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.rtl .Desktop-quantity-selector {
+  text-align: right;
+  direction: rtl;
+  float: right;
+}
+
+.ltr .Desktop-quantity-selector {
+  text-align: left;
+  direction: ltr;
+  float: left;
+}
+
+
+.Desktop-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+
+
+}
+
+.Desktop-quantity-button {
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  cursor: pointer;
+
+}
+
+
+.Desktop-note-textarea {
+  width: 100%;
+  height: 80px;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.Desktop-note-textarea:focus {
+  border-color: black;
+  outline: none;
+}
+
+
+
+.Desktop-color-selector,
+.Desktop-size-selector {
+  margin-top: 10px;
+}
+
+.Desktop-color-option {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+}
+
+.Desktop-color-option.beige {
+  background-color: beige;
+}
+
+.Desktop-color-option.black {
+  background-color: black;
+}
+
+.Desktop-color-option.blue {
+  background-color: blue;
+}
+
+.Desktop-size-option {
+  padding: 8px 12px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+}
+
+.Desktop-size-option.selected {
+  background-color: black;
+  color: white;
+}
+
+
+.Desktop-success-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  background-color: #b4a9f53b;
+  color: #9081f6;
+  border: 1px solid #9081f6;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  position: relative;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.success-icon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+  color: #9081f6;
+}
+
+.currency {
+  float: left;
+  font-size: 15px;
+  color: #000;
+  padding: 5px;
+}
+
+
+.Desktop-error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  background-color: #b4a9f53b;
+  color: #f68181;
+  border: 1px solid #f68181;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  position: relative;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+/* تأثير الحركة */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

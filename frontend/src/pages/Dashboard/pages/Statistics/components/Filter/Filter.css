@@ -1,0 +1,81 @@
+.Filter {
+    position: relative;
+    float: right;
+    margin-top: 15px;
+    width: 100%;
+    margin-top: 35px;
+    margin-right: 0%;
+    height: auto;
+}
+
+.Filter-center {
+    width: 400px;
+    float: right;
+    margin-right: 10%;
+}
+
+.Filter-btn-light {
+    background-color: var(--background-color-light);
+    border: 2px solid #2196F3;
+    color: var(--header-background-color-light);
+
+
+}
+
+.Filter-btn-dark {
+    border: 2px solid #564e7d;
+    color: var(--text-color-dark);
+
+}
+
+
+
+.Filter-btn {
+    padding: 8px 18px 8px 18px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.Filter-btn:hover {
+    opacity: 3;
+
+}
+
+.Filter-btn-active {
+    padding: 8px 18px 8px 18px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-weight: 700;
+
+}
+
+.Filter-btn-active-light {
+    background-color: var(--header-background-color-light);
+    border: 2px solid #2196F3;
+    color: var(--text-color-dark);
+
+
+}
+
+.Filter-btn-active-dark {
+    background-color: var(--header-background-color-dark);
+    border: 2px solid #564e7d;
+    color: var(--text-color-dark);
+
+}
+
+
+@media screen and (max-width: 992px) {
+
+    .Filter-center {
+        width: 100%;
+        float: right;
+        margin-right: 0%;
+    }
+
+}

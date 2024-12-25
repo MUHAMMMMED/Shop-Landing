@@ -1,0 +1,43 @@
+ .coupon-btn {
+     background-color: #9081f6;
+     color: #fff;
+     /* White text */
+     border: none;
+     /* Remove border */
+     border-radius: 4px 0px 0px 4px;
+     /* Rounded corners */
+     padding: 10px 0px;
+     /* Add padding */
+     cursor: pointer;
+     /* Add pointer cursor */
+     width: 20%;
+     margin: auto;
+     text-align: center;
+     margin-top: 14px;
+ }
+
+ .px-1 {
+     margin-right: 15px;
+ }
+
+ .js-apply-coupon-icon {
+     margin-right: 5px;
+ }
+
+
+
+ .form-control {
+     flex: 1;
+     /* Take remaining space */
+     border: none;
+     /* Remove border */
+     border-radius: 0px 4px 4px 0px;
+     /* Rounded corners */
+     padding: 10px;
+     /* Add padding */
+     margin-left: 0px;
+     /* Add some space between input and button */
+     border: 1px solid #dee2e6;
+     text-align: center;
+     width: 80%;
+ }

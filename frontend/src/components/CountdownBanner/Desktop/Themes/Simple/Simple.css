@@ -1,0 +1,141 @@
+.Countdown {
+    padding: 20px;
+    width: 100%;
+    float: right;
+}
+
+.countdown-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #d6e5ff, #fde5df);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #212121;
+    font-family: "Arial", sans-serif;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* Enable wrapping for smaller screens */
+}
+
+/* Offer Text */
+.banner-text {
+    text-align: left;
+    flex: 1;
+    min-width: 300px;
+    padding: 50px;
+}
+
+.banner-text .title {
+    font-size: 2rem;
+    margin-bottom: 0px;
+    color: #212121;
+    line-height: 45px;
+}
+
+.shop-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #192a56;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.shop-button:hover {
+    background-color: #0c1a3d;
+}
+
+/* Countdown Timer */
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+}
+
+.time-box {
+    text-align: center;
+    min-width: 70px;
+}
+
+.time {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: #212121;
+}
+
+.label {
+    font-size: 1rem;
+    color: #757575;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .countdown-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .banner-text {
+        margin-bottom: 20px;
+    }
+
+    .shop-button {
+        margin: 10px 0;
+    }
+
+    .banner-text .title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: #212121;
+    }
+
+    .banner-text {
+        text-align: left;
+        flex: 1;
+        min-width: 300px;
+        padding: 10px;
+    }
+
+    .time {
+        font-size: 2rem;
+    }
+
+    .label {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .time-box {
+        min-width: 50px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .shop-button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .time {
+        font-size: 1.5rem;
+    }
+
+    .label {
+        font-size: 0.8rem;
+    }
+}

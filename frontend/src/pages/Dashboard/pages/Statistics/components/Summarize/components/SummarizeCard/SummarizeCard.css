@@ -1,0 +1,47 @@
+/* SummarizeCard.css */
+.summarize-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* للحصول على المساحة بين العناصر */
+  margin: 0 -10px; /* لتحسين المساحة بين الكروت */
+}
+
+.summarize-card {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; /* توزيع المحتوى داخل الكارد */
+  align-items: center; /* محاذاة العناصر عموديًا */
+  gap: 15px;
+  transition: box-shadow 0.3s ease;
+  flex: 1 1 calc(33.333% - 20px); /* ثلاث كروت في الصف */
+  margin: 10px; /* المسافة بين الكروت */
+}
+
+.summarize-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.card-title {
+  font-size: 14px;
+  color: #888;
+}
+
+.card-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Media Query للموبايل */
+@media (max-width: 768px) {
+  .summarize-card {
+      flex: 1 1 100%; /* كارت واحد لكل صف */
+  }
+}

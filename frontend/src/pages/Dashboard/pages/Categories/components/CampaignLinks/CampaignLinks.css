@@ -1,0 +1,94 @@
+.campaign-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #8aa1a3;
+}
+
+.link-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #fbfafa;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 80px;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.platform-name {
+  font-size: 13px;
+  color: #333;
+  font-weight: bold;
+}
+
+.link-text {
+  font-size: 13px;
+  color: #333;
+  flex: 1;
+  margin-left: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copy-btn {
+  background-color: #d2a68e;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-icon {
+  color: #ff4d4d;
+  font-size: 16px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.delete-icon:hover {
+  color: #d11a2a;
+}
+
+/* الألوان لكل منصة */
+.facebook { color: #3b5998; }
+.instagram { color: #e1306c; }
+.twitter { color: #1da1f2; }
+.tiktok { color: #69C9D0; }
+.google { color: #4285F4; }
+.snapchat { color: #FFFC00; }
+.youtube { color: #FF0000; }
+.pinterest { color: #E60023; }
+.influencer { color: #FF4500; }
+.other { color: #333333; }
+
+@media (max-width: 600px) {
+  .link-item {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .icon-name {
+      width: 100%;
+      margin-bottom: 6px;
+  }
+  .link-text {
+      text-align: left;
+  }
+}

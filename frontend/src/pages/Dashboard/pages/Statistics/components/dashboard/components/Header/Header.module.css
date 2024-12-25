@@ -1,0 +1,50 @@
+/* Header.module.css */
+
+.header {
+    display: none;
+    /* مخفي افتراضيًا، يظهر فقط على الموبايل */
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--navbar-bg-color);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 900;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.mobileToggleBtn {
+    background: none;
+    border: none;
+    color: var(--navbar-text-color);
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color var(--transition-duration);
+}
+
+.mobileToggleBtn:hover {
+    color: #bdc3c7;
+}
+
+/* تحديد موقع زر القائمة بناءً على اتجاه الشريط الجانبي */
+.left {
+    margin-left: auto;
+}
+
+.right {
+    margin-right: auto;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+    }
+}

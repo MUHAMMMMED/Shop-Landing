@@ -1,0 +1,63 @@
+.Dashboard_Card {
+    width: 100%;
+    float: left;
+    background-color: none !important;
+}
+
+.DashboardCard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding-bottom: 20px;
+    /* background-color: none !important; */
+
+
+}
+
+.dashcard {
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    float: left;
+    transition: transform 0.2s;
+    background-color: #fff;
+
+}
+
+.dashcard :hover {
+    transform: scale(1.05);
+}
+
+.dashcard-row-icon {
+    float: left;
+    width: 25%;
+}
+
+.dashcard-row-text {
+    float: left;
+    width: 75%;
+}
+
+.dashcard h2 {
+    font-size: .875rem;
+    line-height: 1.25rem;
+    color: #a3aed0;
+}
+
+.dashcard p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    color: #000000;
+
+}
+
+.dashcard_icon {
+    font-size: 24px;
+    padding: 10px 10px 0px 10px;
+     color: var(--dash-text-color);
+    border-radius: 50px;
+    background-color: #fafafa;
+
+}

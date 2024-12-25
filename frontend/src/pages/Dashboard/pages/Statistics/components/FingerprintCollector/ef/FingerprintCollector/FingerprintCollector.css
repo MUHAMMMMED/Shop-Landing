@@ -1,0 +1,27 @@
+.consent-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+.consent-popup button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.consent-popup button:first-of-type {
+    background-color: #4caf50;
+    color: white;
+}
+.consent-popup button:last-of-type {
+    background-color: #f44336;
+    color: white;
+}

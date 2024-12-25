@@ -1,0 +1,240 @@
+/* General Styles for profile card */
+.profile-card {
+    width: 100%;
+    margin: 0px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Card header positioning */
+.card-header {
+    position: relative;
+}
+
+/* Cover photo and banner */
+.cover-photo,
+.cover-banner {
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+/* Profile image positioning */
+.profile-div-pic {
+    width: 120px;
+    position: relative;
+    float: left;
+    left: 0%;
+    margin-top: -50px;
+    z-index: 2;
+}
+
+/* Profile picture style */
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 10%;
+    /* Made it circular */
+    border: 4px solid #fff;
+    background-color: #fff;
+    z-index: 3;
+}
+
+/* Profile information section */
+.profile-info {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Profile details styling */
+.profile-div-info {
+    width: calc(100% - 120px);
+    float: left;
+}
+
+.info-name {
+    width: 100%;
+    text-align: left;
+    color: #000;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 5px 10px 0px;
+    width: 100%;
+    color: #000 !important;
+}
+
+.info-details,
+.info-details-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.info-details-row-icon {
+    color: gray;
+    font-size: 1.2em;
+    margin-right: 10px;
+    font-weight: 700;
+}
+
+.info-details-row-text {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: 700;
+}
+
+.role {
+    color: gray;
+    font-size: 0.9em;
+}
+
+.details {
+    font-size: 0.85em;
+    color: #666;
+}
+
+/* Connect button style */
+.connect-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #9b5de5;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile (up to 480px) */
+@media (max-width: 480px) {
+    .profile-card {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .profile-div-pic {
+        width: 100px;
+        margin-top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    .profile-div-info {
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .info-details,
+    .info-details-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .connect-btn {
+        position: static;
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+/* Tablet (481px to 768px) */
+@media (max-width: 768px) {
+    .profile-card {
+        width: 100%;
+    }
+
+    .profile-div-pic {
+        width: 100%;
+        margin-top: -40px;
+    }
+
+
+    .profile-pic {
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+    }
+
+    .profile-div-info {
+        width: 100%
+    }
+
+    h2 {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .info-details,
+    .info-details-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .connect-btn {
+        position: static;
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
+
+/* Desktop (above 768px) */
+@media (min-width: 769px) {
+    .profile-card {
+        width: 100%;
+    }
+
+    .profile-div-pic {
+        width: 120px;
+        margin-top: -50px;
+        left: 0%;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-div-info {
+        width: calc(100% - 120px);
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .info-details,
+    .info-details-row {
+        flex-direction: row;
+    }
+
+    .connect-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}

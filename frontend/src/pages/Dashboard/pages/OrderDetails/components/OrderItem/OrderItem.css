@@ -1,0 +1,104 @@
+.order-details h2 {
+    color: #433c50;
+    padding: 8px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    float: left;
+}
+
+tbody {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: #f6f7fb;
+    color: #433c50;
+}
+
+table th,
+table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #433c50;
+}
+
+.note-row {
+    padding: 9px;
+    border: 0px solid #ddd;
+}
+
+.summary {
+    float: right;
+    margin-right: 15px;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 15px;
+    width: 200px;
+    color: #433c50 !important;
+}
+
+.order-table-icon {
+    float: left;
+    font-size: 40px;
+    margin-top: 5px;
+    margin-right: 8px;
+    color: #000000;
+}
+
+.order-table-name {
+    float: left;
+    margin-top: 15px;
+    margin-left: 8px;
+}
+
+.order-table-list_note {
+    display: block;
+    margin-top: 1px;
+    float: right;
+    width: 90% !important;
+    margin-right: 2.5%;
+    text-align: right;
+    height: auto;
+    border-radius: 2px;
+    padding: 0px;
+    padding-right: 3px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+
+
+
+}
+
+.list_note_number {
+    float: right;
+    margin-left: 8px;
+    border: 1px solid #ddd;
+    padding: 2px 5px;
+    font-weight: 700;
+    border-radius: 3px;
+}
+
+.cart_list_note {
+    display: block;
+}
+
+.summary-item {
+    padding: 5px;
+}
+
+.summary-label {
+    width: 50%;
+    float: left;
+}
+
+.summary-value {
+    width: 50%;
+    float: left;
+}

@@ -1,0 +1,18 @@
+/* src/Screens/Dashboard/components/Content/Content.css */
+
+.content {
+    padding: 20px;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(74, 74, 74);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+
+
+}
+
+.content h1 {
+    margin-bottom: 20px;
+}

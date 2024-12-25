@@ -1,0 +1,44 @@
+.notifications-icon {
+    position: relative;
+  }
+  
+  .notifications-icon .icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .notification-bell {
+    position: relative;
+  }
+  
+  .notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 12px;
+  }
+  
+  .notifications-icon .dropdown {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notifications-icon .dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .notifications-icon .dropdown li {
+    padding: 8px 0;
+    width: 150px;
+  }

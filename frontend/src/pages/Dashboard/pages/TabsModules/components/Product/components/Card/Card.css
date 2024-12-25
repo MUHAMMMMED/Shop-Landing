@@ -1,0 +1,73 @@
+/* Card container */
+.tab-card {
+    float: left;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Card image section */
+.tab-card-image {
+    background-color: #add8e6;
+    /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-card-image img {
+    width: 100%;
+    height: auto;
+    /* border-radius: 50%; */
+}
+
+/* Card content section */
+.tab-card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tab-card-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Card button */
+.tab-card-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #000000;
+    background-color: transparent;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-card-button:hover {
+    background-color: #000000;
+    color: white;
+}
+
+
+@media screen and (max-width: 768px) {
+    .tab-card {
+        float: left;
+        width: 45%;
+
+    }
+
+}

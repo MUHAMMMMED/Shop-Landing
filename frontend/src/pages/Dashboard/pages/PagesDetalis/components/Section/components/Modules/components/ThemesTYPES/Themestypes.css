@@ -1,0 +1,41 @@
+.device-selector {
+    display: flex;
+    flex-direction: row;
+    /* ترتيب أفقي افتراضي للشاشات الأكبر */
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.icon-selector .icon {
+    font-size: 24px;
+    /* حجم الأيقونة */
+}
+
+/* تنسيقات مخصصة للسليكشن */
+.device-select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* تنسيقات مخصصة للسليكشن في الشاشات الصغيرة */
+@media (max-width: 600px) {
+    .device-selector {
+        flex-direction: column;
+        /* ترتيب عمودي على الشاشات الصغيرة */
+        align-items: flex-start;
+    }
+
+    .icon-selector {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .device-select {
+        margin-top: 10px;
+        /* إضافة مساحة بين الأيقونة والسليكشن */
+        width: 100%;
+        /* جعل السليكشن يمتد بعرض العنصر الحاوي */
+    }
+}

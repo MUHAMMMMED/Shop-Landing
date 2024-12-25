@@ -1,0 +1,78 @@
+/* Container for the grid */
+.features-Grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Individual feature item */
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+    padding: 0px;
+}
+
+/* Reverse row for alternating layout */
+.reverse-row {
+    flex-direction: row-reverse;
+}
+
+
+/* Feature image */
+.feature-image {
+    width: 50%;
+    height: 650px;
+    object-fit: cover;
+    border-radius: 0px;
+}
+
+/* Feature content */
+.feature-content {
+    width: 50%;
+    padding: 10px;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    /* Customize this color */
+    margin: 0;
+}
+
+.feature-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #777;
+    margin-top: 5px;
+}
+
+.feature-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .feature-content {
+        width: 100%;
+    }
+}

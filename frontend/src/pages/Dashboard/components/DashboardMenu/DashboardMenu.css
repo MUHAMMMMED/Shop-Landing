@@ -1,0 +1,63 @@
+/* DashboardMenu.css */
+.dashboard-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 أعمدة في الشاشات الصغيرة */
+  gap: 15px;
+  padding: 20px;
+
+}
+.rtl .dashboard-menu {
+  direction: rtl;
+}
+
+.ltr .dashboard-menu {
+  direction: ltr;
+}
+
+.dashboard-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--dash-secondary-background-color);
+  color: var(--dash-text-color);
+  border-radius: var(--dash-border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.rtl .dashboard-menu-item {
+  direction: rtl;
+}
+
+.ltr .dashboard-menu-item {
+  direction: ltr;
+}
+
+
+
+
+.dashboard-menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-menu-item span {
+  margin-top: 10px;
+  font-size: var(--dash-font-size-medium);
+}
+
+@media (min-width: 768px) {
+  .dashboard-menu {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* @media (min-width: 1024px) {
+    .dashboard-menu {
+      display: none;  
+    }
+  } */

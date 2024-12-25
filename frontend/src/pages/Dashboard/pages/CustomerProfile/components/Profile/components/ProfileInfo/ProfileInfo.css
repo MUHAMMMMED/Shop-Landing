@@ -1,0 +1,36 @@
+/* ProfileCard.css */
+.Info-card {
+    width: 100%;
+    /* margin: 0px auto; */
+    /* padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.Info-section {
+    margin-bottom: 20px;
+}
+
+.Info-section-title {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.Info-info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #555;
+}
+
+.Info-icon {
+    margin-right: 8px;
+    color: #888;
+    font-size: 25px;
+}

@@ -1,0 +1,403 @@
+.imageicon {
+    display: block;
+    width: 70px;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.floating_btn {
+    position: fixed;
+    bottom: 18%;
+    right: 35px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.floating_btn1 {
+    position: fixed;
+    bottom: 5%;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+@keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+}
+
+.contact_icon {
+    background-color: #42db87;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translatey(0px);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 #42db87;
+    -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    font-weight: normal;
+    font-family: sans-serif;
+    text-decoration: none !important;
+    transition: all 300ms ease-in-out;
+}
+
+.contact_icon1 {
+    background-color: #2196F3;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #2196F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translatey(0px);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 #2196F3;
+    -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    font-weight: normal;
+    font-family: sans-serif;
+    text-decoration: none !important;
+    transition: all 300ms ease-in-out;
+}
+
+
+
+
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    4% {
+        transform: rotate(-25deg);
+    }
+
+    8% {
+        transform: rotate(25deg);
+    }
+
+    12% {
+        transform: rotate(-25deg);
+    }
+
+    16% {
+        transform: rotate(25deg);
+    }
+
+    20% {
+        transform: rotate(-25deg);
+    }
+
+    24% {
+        transform: rotate(25deg);
+    }
+
+    28% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+
+
+/***************  MOBILE ***************/
+@media only screen and (max-width: 48em) {
+    .nz-button-2 a {
+        padding: 12px 53px 12px 10px;
+    }
+
+    .type.nz-button-2>div {
+        margin: 0px auto;
+        display: table-cell;
+    }
+
+    .type.nz-button-2 {
+        left: 40%;
+        bottom: 15px;
+        text-align: left;
+        margin: 0;
+    }
+
+
+    .floating_btn {
+        position: fixed;
+        bottom: 90px;
+        right: 16px;
+
+    }
+
+
+    .floating_btn1 {
+        position: fixed;
+        bottom: 0px;
+        right: 16px;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+}
+
+
+/* Tada Animation */
+@keyframes tada {
+    0% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+
+    10%,
+    20% {
+        -webkit-transform: scale(.9) rotate(-8deg);
+        -ms-transform: scale(.9) rotate(-8deg);
+        transform: scale(.9) rotate(-8deg);
+    }
+
+    30%,
+    50% {
+        -webkit-transform: scale(1.2) rotate(8deg);
+        -ms-transform: scale(1.2) rotate(8deg);
+        transform: scale(1.2) rotate(8deg);
+    }
+
+    40% {
+        -webkit-transform: scale(1.2) rotate(-8deg);
+        -ms-transform: scale(1.2) rotate(-8deg);
+        transform: scale(1.2) rotate(-8deg);
+    }
+
+    60%,
+    100% {
+        -webkit-transform: scale(1) rotate(0);
+        -ms-transform: scale(1) rotate(0);
+        transform: scale(1) rotate(0);
+    }
+}
+
+.faa-tada.animated,
+.faa-tada.animated-hover:hover,
+.faa-parent.animated-hover:hover>.faa-tada {
+    -webkit-animation: tada 2s linear infinite;
+    animation: tada 2s linear infinite;
+}
+
+.faa-tada.animated.faa-fast,
+.faa-tada.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover>.faa-tada.faa-fast {
+    -webkit-animation: tada 1s linear infinite;
+    animation: tada 1s linear infinite;
+}
+
+.faa-tada.animated.faa-slow,
+.faa-tada.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover>.faa-tada.faa-slow {
+    -webkit-animation: tada 3s linear infinite;
+    animation: tada 3s linear infinite;
+}
+
+
+/* Tada Burst */
+@-webkit-keyframes ring {
+    0% {
+        -webkit-transform: rotate(-15deg);
+        transform: rotate(-15deg)
+    }
+
+    2% {
+        -webkit-transform: rotate(15deg);
+        transform: rotate(15deg)
+    }
+
+    4% {
+        -webkit-transform: rotate(-18deg);
+        transform: rotate(-18deg)
+    }
+
+    6% {
+        -webkit-transform: rotate(18deg);
+        transform: rotate(18deg)
+    }
+
+    8% {
+        -webkit-transform: rotate(-22deg);
+        transform: rotate(-22deg)
+    }
+
+    10% {
+        -webkit-transform: rotate(22deg);
+        transform: rotate(22deg)
+    }
+
+    12% {
+        -webkit-transform: rotate(-18deg);
+        transform: rotate(-18deg)
+    }
+
+    14% {
+        -webkit-transform: rotate(18deg);
+        transform: rotate(18deg)
+    }
+
+    16% {
+        -webkit-transform: rotate(-12deg);
+        transform: rotate(-12deg)
+    }
+
+    18% {
+        -webkit-transform: rotate(12deg);
+        transform: rotate(12deg)
+    }
+
+    100%,
+    20% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+}
+
+@keyframes ring {
+    0% {
+        -webkit-transform: rotate(-15deg);
+        -ms-transform: rotate(-15deg);
+        transform: rotate(-15deg)
+    }
+
+    2% {
+        -webkit-transform: rotate(15deg);
+        -ms-transform: rotate(15deg);
+        transform: rotate(15deg)
+    }
+
+    4% {
+        -webkit-transform: rotate(-18deg);
+        -ms-transform: rotate(-18deg);
+        transform: rotate(-18deg)
+    }
+
+    6% {
+        -webkit-transform: rotate(18deg);
+        -ms-transform: rotate(18deg);
+        transform: rotate(18deg)
+    }
+
+    8% {
+        -webkit-transform: rotate(-22deg);
+        -ms-transform: rotate(-22deg);
+        transform: rotate(-22deg)
+    }
+
+    10% {
+        -webkit-transform: rotate(22deg);
+        -ms-transform: rotate(22deg);
+        transform: rotate(22deg)
+    }
+
+    12% {
+        -webkit-transform: rotate(-18deg);
+        -ms-transform: rotate(-18deg);
+        transform: rotate(-18deg)
+    }
+
+    14% {
+        -webkit-transform: rotate(18deg);
+        -ms-transform: rotate(18deg);
+        transform: rotate(18deg)
+    }
+
+    16% {
+        -webkit-transform: rotate(-12deg);
+        -ms-transform: rotate(-12deg);
+        transform: rotate(-12deg)
+    }
+
+    18% {
+        -webkit-transform: rotate(12deg);
+        -ms-transform: rotate(12deg);
+        transform: rotate(12deg)
+    }
+
+    100%,
+    20% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+}
+
+.faa-parent.animated-hover:hover>.faa-ring,
+.faa-ring.animated,
+.faa-ring.animated-hover:hover {
+    -webkit-animation: ring 2s ease infinite;
+    animation: ring 2s ease infinite;
+    transform-origin-x: 50%;
+    transform-origin-y: 0;
+    transform-origin-z: initial
+}
+
+.faa-parent.animated-hover:hover>.faa-ring.faa-fast,
+.faa-ring.animated-hover.faa-fast:hover,
+.faa-ring.animated.faa-fast {
+    -webkit-animation: ring 1s ease infinite;
+    animation: ring 1s ease infinite
+}
+
+.faa-parent.animated-hover:hover>.faa-ring.faa-slow,
+.faa-ring.animated-hover.faa-slow:hover,
+.faa-ring.animated.faa-slow {
+    -webkit-animation: ring 3s ease infinite;
+    animation: ring 3s ease infinite
+}

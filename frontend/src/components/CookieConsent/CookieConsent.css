@@ -1,0 +1,47 @@
+.cookie-consent {
+    position: fixed;
+    bottom: -100px; /* بدء من خارج الشاشة */
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.5s forwards; /* حركة السحب للأعلى */
+    z-index: 1000;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+}
+
+.cookie-consent p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.cookie-buttons {
+    margin-top: 10px;
+    margin: 0 5px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.cookie-buttons:hover {
+    background-color: #000000;
+}
+
+ 
+@keyframes slideUp {
+    from {
+        bottom: -100px;
+    }
+    to {
+        bottom: 0;
+    }
+}

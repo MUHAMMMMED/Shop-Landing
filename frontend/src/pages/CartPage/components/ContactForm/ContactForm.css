@@ -1,0 +1,279 @@
+.ContactForm_container {
+  width: 100%;
+  float: left;
+  top: 0px;
+  background-color: rgb(255, 255, 255);
+  padding: 8px;
+
+}
+
+.ContactForm {
+  width: 100%;
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #fff;
+  float: left;
+}
+
+form h3 {
+  margin-bottom: 20px;
+  text-align: right;
+  font-size: 15px;
+
+}
+
+.grup {
+
+  display: flex;
+  flex-direction: row-reverse;
+  /* Start from right */
+  justify-content: space-between;
+  /* Space between items */
+  width: 100%;
+
+}
+
+
+.grup-row {
+  width: 49% !important;
+}
+
+.ContactForm-input-text,
+.SElect,
+textarea {
+  width: 100% !important;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  float: right;
+  text-align: right;
+}
+
+.react-tel-input .form-control {
+  height: 45px;
+}
+
+.ContactForm-input-text {
+  padding: 15px !important;
+}
+
+.address-preview {
+  float: right;
+  border-radius: 5px;
+  padding: 0px;
+  width: 100%;
+}
+
+.Shipping-method {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  display: inline-block;
+  justify-content: space-between;
+}
+
+.address-sub-title {
+  color: hsl(0, 0%, 20%);
+  font-size: 15px;
+  padding: 15px;
+  text-align: right;
+  font-weight: 700;
+
+}
+
+
+.Delivery-card {
+  float: right;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  margin-left: 0%;
+  padding: 20px;
+
+}
+
+.Delivery-card:hover {
+  background-color: #a68ec215;
+  border: 2px solid #c66ee1;
+
+}
+
+.Delivery-checked {
+  float: right;
+  width: 10px;
+  margin-right: 17px;
+  margin-top: 12px;
+
+}
+
+
+.Delivery-option-icon {
+  float: right;
+  margin-right: 0px;
+  width: 35px;
+  margin-top: 4px;
+}
+
+.DElivery-card-content {
+  padding: 0;
+  float: right;
+  margin-right: 2%;
+  width: 45% !important;
+  text-align: right;
+
+
+}
+
+.card-title {
+  float: right;
+  padding: 0;
+  width: 100%;
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+
+}
+
+.card-text {
+  margin-top: 5px;
+  float: right;
+  width: 100%;
+  font-size: 14px;
+  color: #666;
+  display: block;
+
+}
+
+.DElivery-card-price {
+  padding: 0;
+  float: right;
+  width: 25%;
+  text-align: left;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+
+}
+
+.desk-card {
+  width: 100%;
+  display: block;
+}
+
+.mobile-card {
+  width: 100%;
+  display: none;
+}
+
+.ContactForm-label {
+  display: flex;
+  direction: rtl;
+  font-weight: bold;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: right;
+  font-size: 15px;
+
+}
+
+.required-star {
+  color: red;
+  width: 30px;
+  padding: 5px;
+
+}
+
+.rtl .ContactForm-label {
+  text-align: right;
+  direction: rtl;
+
+}
+
+.ltr .ContactForm-label {
+  text-align: left;
+  direction: ltr;
+
+}
+
+@media screen and (max-width: 780px) {
+  .ContactForm_container {
+
+    padding: 15px;
+
+  }
+
+  .ContactForm {
+    width: 100%;
+    margin-top: 0px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f7f7f8;
+    float: left;
+    border: 1px solid #ccc;
+  }
+
+  .grup {
+    width: 90%;
+    margin-left: 5%;
+    display: inline;
+  }
+
+
+  .grup-row {
+    width: 100% !important;
+  }
+
+  .ContactForm-input-text {
+    padding: 20px !important;
+  }
+
+  .SElect {
+    padding: 15px;
+
+  }
+
+  .react-tel-input .form-control {
+    height: 50px;
+  }
+
+  .desk-card {
+    width: 100%;
+    display: none;
+  }
+
+  .mobile-card {
+    width: 100%;
+    display: block;
+  }
+
+  .ContactForm-label {
+    font-size: 14px;
+    width: 100%;
+
+
+
+  }
+
+  .rtl .ContactForm-label {
+    text-align: right;
+    direction: rtl;
+
+  }
+
+  .ltr .ContactForm-label {
+    text-align: left;
+    direction: ltr;
+
+  }
+
+
+
+
+}

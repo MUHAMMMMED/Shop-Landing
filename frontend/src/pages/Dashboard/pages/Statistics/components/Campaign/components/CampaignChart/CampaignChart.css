@@ -1,0 +1,113 @@
+/* الحاوية الرئيسية للمخطط */
+.campaign-chart {
+    position: relative;
+    width: 100%;
+    float: left;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial, sans-serif';
+}
+
+/* عنوان المخطط */
+.campaign-chart h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+    font-size: 24px;
+}
+
+/* كل حملة على حدة */
+.campaign {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+}
+
+/* تاريخ الحملة */
+.campaign p.date {
+    font-size: 18px;
+    color: #555555;
+    margin-bottom: 15px;
+}
+
+/* حاوية المؤشرات */
+.indicators {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* كل مؤشر على حدة */
+.indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* اسم المؤشر والعدد */
+.indicator-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100px;
+}
+
+.indicator-info .legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+}
+
+.indicator-info span.name {
+    font-size: 16px;
+    color: #333333;
+}
+
+.indicator-info span.count {
+    font-size: 14px;
+    color: #666666;
+}
+
+/* شريط التقدم */
+.progress-bar {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 10px;
+    height: 5px;
+}
+
+/* شريط التقدم المخصص */
+.progress {
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+/* تصميم متجاوب للشاشات الصغيرة */
+@media (max-width: 600px) {
+    .indicator {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .progress-bar {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 5px;
+   
+    }
+
+    .campaign-chart h2 {
+        font-size: 20px;
+    }
+
+    .campaign p.date {
+        font-size: 16px;
+    }
+
+    .indicator-info span.name {
+        font-size: 14px;
+    }
+}

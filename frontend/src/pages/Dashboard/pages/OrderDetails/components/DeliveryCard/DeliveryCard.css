@@ -1,0 +1,105 @@
+.DeliverCard {
+    float: right;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-right: 0%;
+    padding: 5px;
+    display: block;
+    background-color: #a68ec215;
+    border: 2px solid #c66ee1;
+}
+
+
+
+
+/* Styles for the delivery option icon */
+.DeliveryOption-icon {
+    float: right;
+    margin-right: 0px;
+    width: 40px;
+    height: 40px;
+    margin-top: 4px;
+    display: block;
+    border: 5px solid #ccc;
+    border-radius: 5px;
+}
+
+.deliveryCard-content {
+    padding: 0;
+    float: right;
+    margin-right: 2%;
+    text-align: right;
+    display: block;
+
+}
+
+.deliveryCard-title {
+    float: right;
+    margin-top: 8px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-left: 15px;
+
+}
+
+.deliveryCard-price {
+    padding: 0;
+    float: right;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+}
+
+.deliveryCard-work {
+    padding: 0;
+    float: right;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    width: 100%;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .DeliverCard {
+        width: 100%;
+        margin-right: 0%;
+    }
+
+    .deliveryCard-title {
+        float: right;
+        padding: 5;
+        width: 100%;
+        margin-bottom: 0px;
+        font-size: 14px;
+        font-weight: bold;
+        display: block;
+
+    }
+
+    .deliveryCard-price {
+        padding: 0;
+        float: right;
+        width: 50%;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+        display: block;
+
+    }
+}

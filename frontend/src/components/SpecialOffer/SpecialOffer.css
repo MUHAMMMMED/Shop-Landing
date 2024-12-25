@@ -1,0 +1,196 @@
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.special-offer {
+    position: relative;
+    background: radial-gradient(circle,
+            rgba(253, 244, 227, 1) 50%,
+            rgba(253, 244, 227, 0) 100%);
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.special-offer-container {
+    position: relative;
+    background: linear-gradient(135deg, #fff8e1, #ffe0b2);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); */
+    overflow: hidden;
+    border: 2px dashed rgb(55, 53, 53);
+}
+
+.offer-title {
+    font-size: 1.5rem;
+    color: #5c3d2e;
+    margin-bottom: 5px;
+}
+
+.offer-discount {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.offer-percentage {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.offer-off {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    color: #5c3d2e;
+}
+
+
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 223, 0, 0.5);
+        /* أصفر خفيف */
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.9), 0 0 20px rgba(255, 223, 0, 0.7);
+        /* ذهبي ساطع */
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(255, 223, 0, 0.5);
+        /* أصفر خفيف */
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+.offer-code {
+    position: relative;
+    /* قاعدة التأثير */
+    background: linear-gradient(135deg, #fceabb, #f8b500);
+    /* خلفية صفراء متدرجة */
+    color: #5c3d2e;
+    /* لون النص */
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 10px 0;
+    animation: glowing 1.5s infinite;
+    /* توهج متكرر */
+    text-align: center;
+    overflow: hidden;
+    /* إخفاء اللمعة التي تخرج خارج الحدود */
+    border: 2px dashed rgb(55, 53, 53);
+    /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); */
+}
+
+.offer-code::before {
+    content: '';
+    /* محتوى العنصر الوهمي */
+    position: absolute;
+    top: -50%;
+    /* يبدأ من خارج العنصر */
+    left: -100%;
+    /* بداية الحركة */
+    width: 150%;
+    /* عرض اللمعة */
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    /* اللون الأبيض الشفاف */
+    transform: rotate(45deg);
+    /* ميل بزاوية 45 درجة */
+    animation: shine 2s infinite;
+    /* حركة اللمعة المستمرة */
+    pointer-events: none;
+    /* منع تفاعل المستخدم مع التأثير */
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+.offer-valid {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* النجوم */
+.star {
+    position: absolute;
+    background-color: f8b500;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 2s infinite;
+}
+
+.star:nth-child(1) {
+    width: 8px;
+    height: 8px;
+    top: 10%;
+    left: 20%;
+    animation-delay: 0.5s;
+}
+
+.star:nth-child(2) {
+    width: 6px;
+    height: 6px;
+    top: 30%;
+    left: 80%;
+    animation-delay: 1s;
+}
+
+.star:nth-child(3) {
+    width: 10px;
+    height: 10px;
+    top: 60%;
+    left: 10%;
+    animation-delay: 1.5s;
+}
+
+.star:nth-child(4) {
+    width: 7px;
+    height: 7px;
+    top: 80%;
+    left: 50%;
+    animation-delay: 0.8s;
+}
+
+.star:nth-child(5) {
+    width: 5px;
+    height: 5px;
+    top: 20%;
+    left: 70%;
+    animation-delay: 1.2s;
+}

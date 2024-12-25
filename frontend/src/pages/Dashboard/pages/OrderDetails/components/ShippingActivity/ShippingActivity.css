@@ -1,0 +1,106 @@
+ .shipping-activity {
+     float: left;
+     background-color: #fff;
+     border-radius: 10px;
+     box-shadow: 0 .25rem .625rem rgba(46, 38, 61, .2);
+     padding: 20px;
+     width: 100%;
+     margin-top: 20px;
+     font-family: 'Arial', sans-serif;
+     margin-bottom: 20px;
+ }
+
+ .shipping-activity h2 {
+     font-size: 18px;
+     color: #444;
+     margin-bottom: 20px;
+ }
+
+ /* Timeline Container */
+ .timeline {
+     position: relative;
+     padding-left: 20px;
+     border-left: 2px solid #e0e0e0;
+ }
+
+ /* Timeline Item */
+ .timeline-item {
+     display: flex;
+     align-items: flex-start;
+     margin-bottom: 20px;
+     position: relative;
+ }
+
+ .timeline-item:last-child {
+     margin-bottom: 0;
+ }
+
+ .timeline-icon {
+     width: 20px;
+     height: 20px;
+     background-color: #bbb;
+     border-radius: 50%;
+     border: 4px solid #fff;
+     position: absolute;
+     left: -9px;
+     top: 5px;
+     z-index: 1;
+     box-shadow: 0 .25rem .625rem rgba(46, 38, 61, .2);
+ }
+
+ /* Timeline Content */
+ .timeline-content {
+     flex-grow: 1;
+     padding-left: 20px;
+ }
+
+ .timeline-title {
+     font-size: 16px;
+     font-weight: bold;
+     color: #333;
+ }
+
+ .timeline-description {
+     font-size: 14px;
+     color: #666;
+ }
+
+ .timeline-time {
+     font-size: 15px;
+     color: #aaa;
+     white-space: nowrap;
+ }
+
+ /* Status Styling */
+ .timeline-item.completed .timeline-icon {
+     background-color: #4CAF50;
+     /* Green for completed */
+ }
+
+ .timeline-item.current .timeline-icon {
+     background-color: #3B82F6;
+     /* Blue for current */
+ }
+
+ .timeline-item.cancel .timeline-icon {
+     background-color: #ff0000;
+     /* Blue for current */
+ }
+
+
+ .timeline-item.upcoming .timeline-icon {
+     background-color: #bbb;
+     /* Gray for upcoming */
+ }
+
+
+
+ .timeline-item.completed .timeline-title,
+ .timeline-item.current .timeline-title {
+     color: #333;
+ }
+
+ .timeline-item.completed .timeline-description,
+ .timeline-item.current .timeline-description {
+     color: #444;
+ }

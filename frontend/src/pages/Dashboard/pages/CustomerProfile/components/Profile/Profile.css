@@ -1,0 +1,38 @@
+ .Profile-row-L {
+     width: 29%;
+     float: left;
+     padding: 20px;
+     border: 1px solid #ddd;
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     background-color: #fff;
+     margin-right: 2%;
+ }
+
+ .Profile-row-R {
+     float: left;
+     width: calc(100% - 31%);
+     padding: 20px;
+     border: 1px solid #ddd;
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     background-color: #fff;
+     margin-top: 0px;
+
+
+ }
+
+ @media (max-width: 768px) {
+
+     .Profile-row-L {
+         width: 100%;
+         margin-right: 0%;
+     }
+
+     .Profile-row-R {
+         margin-top: 15px;
+         float: left;
+         width: 100%;
+     }
+
+ }

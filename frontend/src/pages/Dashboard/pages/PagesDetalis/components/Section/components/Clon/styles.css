@@ -1,0 +1,114 @@
+/* Style for the icon button */
+.icon-button {
+    background-color: #4CAF50; /* Green background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 10px 15px; /* Some padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Inline-block for better spacing */
+    margin: 4px 2px; /* Margin */
+    cursor: pointer; /* Pointer on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+.icon-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Style for the select dropdown */
+.device-select {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside */
+    margin-top: 10px; /* Margin above */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    background-color: white; /* White background */
+    font-size: 16px; /* Font size */
+    outline: none; /* Remove outline */
+    transition: border-color 0.3s ease; /* Transition effect */
+}
+
+.device-select:focus {
+    border-color: #4CAF50; /* Change border color on focus */
+}
+
+/* Style for the container */
+.clone-container {
+    margin-top: 10px; /* Margin above */
+    padding: 15px; /* Padding inside */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Style for the clone button */
+.clone-button {
+    background-color: #000000; /* Blue background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Transition effect */
+    margin-top: 10px; /* Margin above */
+}
+
+.clone-button:hover {
+    background-color: #030303; /* Darker blue on hover */
+}
+
+
+
+/* ClonePopup.css */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* لون خلفية داكن */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* تأكد من أن النافذة المنبثقة فوق كل العناصر الأخرى */
+}
+
+.clone-popup {
+    background: white; /* خلفية بيضاء */
+    padding: 20px;
+    border-radius: 10px; /* زوايا مستديرة */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* ظل */
+    width: 300px; /* عرض ثابت */
+    text-align: center; /* محاذاة النص في الوسط */
+}
+
+.success-message {
+    color: green; /* لون الرسالة الناجحة */
+    margin-bottom: 10px; /* مسافة فوق الرسالة */
+}
+
+
+/* ClonePopup.css */
+.close-button {
+    background: transparent;
+    border: none;
+    color: red; /* لون الزر */
+    font-size: 20px; /* حجم الخط */
+    cursor: pointer;
+    position: absolute; /* لتحريكه في الزاوية العلوية */
+    top: 10px;
+    right: 10px;
+}
+
+.clone-popup {
+    position: relative; /* لضبط الزر بشكل صحيح */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+}

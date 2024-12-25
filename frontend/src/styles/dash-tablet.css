@@ -1,0 +1,329 @@
+ /* tablet */
+ /* Desktop Table Row */
+
+ 
+ .product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+ 
+.rtl .product-table {
+  text-align: right;
+  direction: rtl; 
+}
+
+.ltr .product-table {
+  text-align: left;
+  direction: ltr; 
+}
+
+/* إعدادات الأعمدة والصفوف */
+.product-table th, .product-table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--dash-border-color);
+ background-color: var(--dash-secondary-background-color);
+}
+
+.product-table th {
+  text-align: inherit;  
+}
+
+.product-table img {
+  margin-inline-end: 10px;  
+  border: 1px solid var(--dash-border-color);
+}
+
+/* Tablet Table Row */
+
+.tablet-table-row {
+  width: 100%;
+  display: flex;
+  padding:  0px;
+  border-bottom: 1px solid var(--dash-border-color);
+}
+
+.rtl .tablet-table-row  {
+  text-align: right;
+  direction: rtl; 
+}
+
+.ltr .tablet-table-row  {
+  text-align: left;
+  direction: ltr; 
+}
+
+
+
+.tablet-table-row img {
+  width: 50px;
+  border-radius:var(--dash-border-radius);
+  margin-right: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+}
+/* Mobile Table Row */
+ 
+.mobile-table-row {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--dash-border-color);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius:var(--dash-border-radius);
+  background-color: var(--dash-secondary-background-color);
+  color: var(--dash-text-color);
+}
+
+.rtl .mobile-table-row  {
+  text-align: right;
+  direction: rtl; 
+}
+
+.ltr .mobile-table-row   {
+  text-align: left;
+  direction: ltr; 
+}
+
+
+.product-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
+ 
+.product-image {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--dash-border-radius);
+}
+
+.rtl .product-image   {
+  margin-left: 10px;
+}
+
+.ltr .product-image   {
+
+  margin-right: 10px;
+}
+
+
+.product-details {
+  font-size: 14px;
+}
+
+ 
+
+/* btn */
+.dash-btn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-inline-end: 10px;
+  border: 1px solid var(--dash-border-color);
+  cursor: pointer;
+  background-color:var( --dash-text-white-color);
+  color:var(--dash-text-color);
+  position: relative;
+}
+
+.dash-btn:hover {
+  opacity: 0.9;
+  background-color: var(--dash-text-black-color);
+  color: var( --dash-text-white-color);
+}
+
+.dash-btn:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--dash-text-black-color);
+  color: var( --dash-text-white-color);
+  padding: 5px 8px;
+  border-radius:var(--dash-border-radius);
+  white-space: nowrap;
+  font-size: var(--dash-font-size-medium);
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 1000;
+}
+
+.dash-btn:hover::before {
+  content: '';
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color:  var(--dash-text-black-color)  transparent transparent transparent;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.dash-btn::after,
+.dash-btn::before {
+  opacity: 0;
+}
+
+.dash-btn:hover::after,
+.dash-btn:hover::before {
+  opacity: 1;
+}
+
+.dash-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--dash-text-color);
+}
+
+/* mobile btn */
+
+.mobile-actions {
+  display: flex;
+  gap: 2px; 
+  width: 100%;  
+}
+
+.mobile-btn {
+  flex: 1; /* Each button takes equal space */
+  padding: 10px;
+  border: none;
+  background-color:var(--dash-but--background);
+  color: var(--dash-text-color);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* To position the tooltip correctly */
+}
+
+.mobile-btn:hover {
+  opacity: 0.9;
+  background-color:var(--dash-text-black-color);
+  color: var(--dash-text-white-color);
+}
+
+.mobile-btn:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%; /* Position above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color:var(--dash-text-black-color);
+  color:var(--dash-text-white-color);
+  padding: 5px 8px;
+  border-radius:var(--dash-border-radius);
+  white-space: nowrap;
+  font-size: var(--dash-font-size-small);
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 1000;
+}
+
+.mobile-btn:hover::before {
+  content: '';
+  position: absolute;
+  bottom: 95%; /* Slightly above the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--dash-text-black-color) transparent transparent transparent;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.mobile-btn::after,
+.mobile-btn::before {
+  opacity: 0;
+}
+
+.mobile-btn:hover::after,
+.mobile-btn:hover::before {
+  opacity: 1;
+}
+
+.mobile-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--dash-text-color);
+}
+
+
+
+/* radius-img */
+
+.products-radius {
+  display: flex;
+  align-items: center;
+}
+
+.product-radius-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+ 
+.product-radius-count {
+  background-color:var( --dash-primary-color);
+  color:var(--dash-text-white-color);
+  padding: 5px 10px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+.action-icons {
+  display: flex;
+  gap: 10px;
+}
+ 
+.header-table {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+ 
+.rtl .header-table {
+  text-align: right;
+  direction: rtl; 
+}
+
+.ltr .header-table{
+  text-align: left;
+  direction: ltr; 
+}
+
+.header-table h1 {
+  margin: 0;
+  color: var(--dash-text-color);
+  font-size: var(--dash-font-size-medium);
+
+}
+
+.add-table{
+  background-color: var(--dash-text-white-color);
+  color: var(--dash-text-color);
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+
+
+}
+.add-table:hover{
+  background-color: var(--dash-text-black-color);
+  color: var(--dash-text-white-color);
+}

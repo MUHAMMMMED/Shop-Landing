@@ -1,0 +1,47 @@
+/* DashFooterNav.css */
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--dash-secondary-background-color);
+    padding: 10px 0;
+    border-top: 1px solid var(--dash-border-color);
+}
+
+.rtl .footer-nav {
+    direction: rtl; 
+}
+
+.ltr .footer-nav  {
+    direction: ltr; 
+}
+
+.nav-button {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    color: var(--dash-text-color);
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-button span {
+    margin-top: 5px;
+    font-size: var(--dash-font-size-small);
+}
+
+.nav-button:focus {
+    outline: none;
+}
+
+@media (min-width: 1023px) {
+    .footer-nav {
+        display: none; /* Hide footer on desktop */
+    }
+}
+ 

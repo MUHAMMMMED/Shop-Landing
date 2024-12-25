@@ -1,0 +1,35 @@
+.profile-icon {
+    position: relative;
+  }
+  
+  .profile-icon .icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .profile-icon .dropdown {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-icon .dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .profile-icon .dropdown li {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    width: 150px;
+  }
+  
+  .profile-icon .dropdown li svg {
+    margin-right: 8px;
+  }

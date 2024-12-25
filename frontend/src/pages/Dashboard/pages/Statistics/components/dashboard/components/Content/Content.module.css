@@ -1,0 +1,13 @@
+/* Content.module.css */
+
+.content {
+    margin-top: 20px;
+}
+
+/* لتجنب تغطية المحتوى بشريط التنقل العلوي على الموبايل */
+@media (max-width: 768px) {
+    .content {
+        padding-top: 60px;
+        /* ارتفاع شريط التنقل العلوي */
+    }
+}

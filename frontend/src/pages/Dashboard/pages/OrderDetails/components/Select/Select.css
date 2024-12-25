@@ -1,0 +1,19 @@
+.details_select {
+    margin-top: 15px;
+}
+
+.select_label {
+    font-size: 15px;
+    color: #433c50;
+}
+
+.delete-order {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}

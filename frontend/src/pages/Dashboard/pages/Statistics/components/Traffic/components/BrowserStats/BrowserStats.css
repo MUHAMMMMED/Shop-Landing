@@ -1,0 +1,60 @@
+/* الحاوية الرئيسية */
+.browser-stats {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #ffff;
+}
+
+.browser-stats th,
+.browser-stats td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* عنوان الأعمدة */
+.browser-stats th {
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+/* أيقونات المتصفح */
+.browser-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+/* حاوية شريط التقدم والنسبة المئوية */
+.progress-container {
+    display: flex;
+    /* استخدم flexbox لمحاذاة العناصر بجانب بعضها */
+    align-items: center;
+    /* محاذاة عمودية للوسط */
+}
+
+/* شريط التقدم */
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-right: 10px;
+    /* مسافة بين الشريط والنسبة المئوية */
+}
+
+.progress {
+    height: 10px;
+    background-color: #4285F4;
+    /* الأزرق الخاص بجوجل */
+    transition: width 0.3s ease;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 600px) {
+
+    .browser-stats th,
+    .browser-stats td {
+        padding: 8px;
+    }
+}

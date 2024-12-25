@@ -1,0 +1,130 @@
+ 
+   .sidebar {
+    width: 250px;
+    background-color: var(--dash-secondary-background-color);
+    color: var(--dash-text-color);
+    height: 100%;
+    transition: all 0.5s ease;
+    position: relative;
+    padding: 4px;
+  }
+    
+  .rtl .welcome {
+    direction: rtl;
+    margin-right: 25px;
+  }
+  
+  .ltr .welcome  {
+    direction: ltr;
+    margin-left: 25px;
+  }
+   
+  .welcome-p{
+  font-size:var(--dash-font-size-small);
+  font-weight: bold;
+  color: var( --dash-text-color);
+
+}
+.rtl .welcome-p {
+  text-align:right!important;
+}
+
+.ltr .welcome-p {
+  text-align: left;
+ 
+}
+.welcome h2{
+  margin-top: 0px;
+  font-size: var(--dash-font-size-large);
+  font-weight: bold;
+  color: var(--dash-primary-color);
+  height: 8px;
+}
+ 
+ 
+
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-right: 13px;
+    margin-left: 2px;
+  }
+ 
+
+  .li-span{
+    
+    padding: 20px;
+    font-size: var(--dash-font-size-small);
+    width: 100%;
+  }
+
+  .ltr .li-span{
+  float: left;
+  text-align: left; 
+  }
+  
+  .rtl .li-span {
+     float: right;
+     text-align:right; 
+    
+  }
+ 
+  .sidebar li {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+  }
+ 
+.rtl .sidebar li:hover {
+        border-right: 4px solid var(--dash-text-color);
+      }
+
+.ltr .sidebar li:hover {
+        border-left: 4px solid var(--dash-text-color);
+      }
+ 
+  .sidebar li .icon {
+    font-size: 25px;
+  }
+  
+  .ltr .sidebar li {
+    flex-direction: row;  
+  }
+  
+  .rtl .sidebar li {
+    flex-direction: row-reverse;  
+  }
+  
+  .rtl .sidebar {
+    order: 1; 
+    margin-right: auto;
+  }
+  
+  .ltr .sidebar {
+    order: -1;  
+    margin-left: auto;
+  }
+
+  .sidebar li span {
+    margin-left: 10px;
+  }
+  
+  .rtl .sidebar li span {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+/* إظهار الـ Sidebar فقط في Desktop */
+@media (min-width: 1024px) {
+  .sidebar {
+    display: block; /* يظهر الـ Sidebar */
+  }
+}
+
+/* إخفاء الـ Sidebar في Tablet و Mobile */
+@media (max-width: 1023px) {
+  .sidebar {
+    display: none; /* إخفاء الـ Sidebar */
+  }
+}

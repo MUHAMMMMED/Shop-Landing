@@ -1,0 +1,417 @@
+.Card_row {
+    width: 75%;
+    margin-right: 10%;
+    float: right;
+    padding-top: 15px;
+    padding-bottom: 80px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.column-light {
+    background-color: var(--card-background-color-light);
+}
+
+.column-dark {
+    background-color: var(--card-background-color-dark);
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    width: 100%;
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column-image {
+    position: relative;
+    float: right;
+    width: 50%;
+    height: 320px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: 320px;
+}
+
+.img-fluid :hover {
+    transform: scale(1.2);
+}
+
+.offer-type-wrap {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.offer-type {
+    display: block;
+    margin-bottom: 5px;
+    padding: 1px 7px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.bg-danger {
+    background-color: #f23a2e !important;
+}
+
+.bg-success {
+    background-color: #7cbd1e !important;
+}
+
+.column-text-light {
+    color: var(---text-color-light);
+}
+
+.column-text-dark {
+    color: var(--text-color-dark);
+}
+
+.column-text {
+    position: relative;
+    float: right;
+    width: 50%;
+    height: 300px;
+    padding: 11px;
+
+}
+
+.property-title {
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: right;
+    padding-bottom: 5px;
+}
+
+h2,
+.h2 {
+    font-size: 2rem;
+}
+
+.property-location {
+    font-size: .9rem;
+    text-align: right;
+    float: right;
+    width: 100%;
+    padding: 5px;
+}
+
+.marker-icon {
+    color: #2196f3;
+    text-align: right;
+    margin-left: 5px;
+    margin-right: 2px;
+
+}
+
+.location-samp {
+    text-align: right;
+    float: right;
+}
+
+
+.text-Card_price {
+    font-size: 1.3rem;
+    width: 100%;
+    float: right;
+    text-align: right;
+    color: #2196f3;
+    font-size: 19px;
+    font-weight: 700;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.currency {
+    font-size: 10px;
+}
+
+.text-Card_p {
+    text-align: right;
+    font-size: 13px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+
+}
+
+table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    direction: rtl;
+}
+
+
+td,
+th {
+    border: 0px solid #dddddd;
+    text-align: center;
+    padding: 0px;
+    font-weight: 700;
+    font-weight: bold;
+
+}
+
+
+
+
+.text-success {
+    color: #7cbd1e !important;
+}
+
+.text-primary {
+    color: #1f3c88 !important;
+}
+
+.Card_div_btn {
+    margin-top: 6px;
+    width: 100%;
+    float: right;
+}
+
+.Card_btn {
+    float: right;
+    border: none;
+    color: white;
+    padding: 5px 7px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 30%;
+    margin-right: 1%;
+    margin-left: 1%;
+    border-radius: 3px;
+}
+
+.success {
+    background-color: #04AA6D;
+}
+
+/* Green */
+.success:hover {
+    background-color: #46a049;
+}
+
+.info {
+    background-color: #2196F3;
+}
+
+/* Blue */
+.info:hover {
+    background: #0b7dda;
+}
+
+.warning {
+    background-color: #ff9800;
+}
+
+/* Orange */
+.warning:hover {
+    background: #e68a00;
+}
+
+
+.default {
+    background-color: #e7e7e7;
+    color: black;
+    margin-right: 20px;
+}
+
+/* Gray */
+.default:hover {
+    background: #ddd;
+}
+
+
+
+
+
+
+@media screen and (max-width: 992px) {
+
+    .Card_row {
+        width: 90%;
+        margin-right: 5%;
+        float: right;
+        padding-top: 15px;
+        padding-bottom: 80px;
+
+    }
+
+
+    .column {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        padding-bottom: 10px;
+
+    }
+
+    .column-image {
+        position: relative;
+        float: right;
+        width: 100%;
+        height: auto;
+    }
+
+    .img-fluid {
+        width: 100%;
+        height: auto;
+
+    }
+
+    .column-text {
+        position: relative;
+        float: right;
+        width: 100%;
+        height: 310px;
+        padding: 11px;
+    }
+
+    table {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+
+    .Card_btn {
+        border: none;
+        color: white;
+        padding: 8px 20px;
+        font-size: 15px;
+        cursor: pointer;
+        width: 30%;
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+
+
+}
+
+
+@media screen and (max-width: 750px) {
+
+    .Card_row {
+        width: 95%;
+        margin-right: 2.5%;
+        float: right;
+        padding-top: 15px;
+        padding-bottom: 80px;
+
+    }
+
+
+    .column {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        padding-bottom: 10px;
+
+    }
+
+    .column-image {
+        position: relative;
+        float: right;
+        width: 100%;
+        height: auto;
+    }
+
+    .column-text {
+        position: relative;
+        float: right;
+        width: 100%;
+        height: 310px;
+        padding: 11px;
+    }
+
+    table {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .Card_btn {
+        border: none;
+        color: white;
+        padding: 8px 20px;
+        font-size: 15px;
+        cursor: pointer;
+        width: 30%;
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .Card_row {
+        width: 95%;
+        margin-right: 2.5%;
+        float: right;
+        padding-top: 15px;
+    }
+
+    .column {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .column-image {
+        position: relative;
+        float: right;
+        width: 100%;
+        height: auto;
+    }
+
+    .column-text {
+        position: relative;
+        float: right;
+        width: 100%;
+        height: 310px;
+        padding: 11px;
+    }
+
+    table {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .Card_btn {
+        border: none;
+        color: white;
+        padding: 8px 20px;
+        font-size: 15px;
+        cursor: pointer;
+        width: 30%;
+        margin-right: 1%;
+        margin-left: 1%;
+    }
+
+
+}
