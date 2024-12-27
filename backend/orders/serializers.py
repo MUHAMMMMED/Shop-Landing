@@ -61,17 +61,6 @@ class Shipping_CompanySerializer(serializers.ModelSerializer):
         country.Shipping.add(shipping_company)  # Associate the shipping company with the country
         return shipping_company
  
-
-
-
-
-
-
-
-
-
-
-
   
 class shipping_CountrySerializer(serializers.ModelSerializer):
     Shipping = Shipping_CompanySerializer(many=True, read_only=True)  # Make it read-only
@@ -106,35 +95,6 @@ class CustomersSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customers
         fields = '__all__'
-
- 
-# class shipping_CountrySerializer(serializers.ModelSerializer):
-#     Shipping = serializers.StringRelatedField(many=True)  
-
-#     class Meta:
-#         model = shipping_Country
-#         fields = "__all__"
-
- 
-
-
-
-
-# class CustomerSerializer(serializers.ModelSerializer):
-#     orders = OrderSerializer(many=True, read_only=True, source='order')
-#     class Meta:
-#         model = Customers
-#         fields = '__all__'
-
-
-
-
-# class CustomerSerializer(serializers.ModelSerializer):
-#     customer = OrderItemSerializer(many=True, read_only=True)  
-#     class Meta:
-#         model = Customers
-#         fields = '__all__'
-
 
  
 class CustomerSerializer(serializers.ModelSerializer):

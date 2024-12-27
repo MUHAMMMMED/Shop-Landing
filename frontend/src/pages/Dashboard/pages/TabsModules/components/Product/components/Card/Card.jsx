@@ -14,9 +14,9 @@ function Card({ data, module_name, pageId, sectionId }) {
                 <h3 className="ctab-ard-title">{data?.name}</h3>
                 <p className="tab-card-text">
                     {data?.ssku}
-                </p>
-                <AddToPage Id={data?.id} pageId={pageId} sectionId={sectionId} module_name={module_name} />
-            </div>
+                </p> </div>
+            <AddToPage Id={data?.id} pageId={pageId} sectionId={sectionId} module_name={module_name} />
+
         </div>
     );
 }

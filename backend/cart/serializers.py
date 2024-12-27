@@ -2,7 +2,6 @@ from rest_framework import serializers
 from .models import *
 from content.serializers import ProductSerializer
 from decimal import Decimal
-# from .models import *
 from products.serializers import *
 
 

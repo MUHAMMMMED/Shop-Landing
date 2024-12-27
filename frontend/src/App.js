@@ -21,7 +21,7 @@ import PasswordResetRequest from './Authentication/PasswordResetRequest/Password
 import ResetPassword from './Authentication/ResetPassword/ResetPassword';
 import Signup from './Authentication/Signup/Signup';
 import VerifyEmail from './Authentication/VerifyEmail/VerifyEmail';
-import Banner from './components/Banner/Banner';
+
 import Success from './components/Success/Success';
 import CreateCategory from './pages/Dashboard/pages/Categories/components/CreateCategory/CreateCategory';
 import UpdateCategory from './pages/Dashboard/pages/Categories/components/UpdateCategory/UpdateCategory';
@@ -83,8 +83,6 @@ const App = () => {
         <Route path="/password-reset-confirm/:uid/:token" element={<ResetPassword />} />
         {/* <Route path="/Redirection" element={<Redirection />} /> */}
 
-
-        <Route path='/banner' element={<Banner />} />
 
 
 

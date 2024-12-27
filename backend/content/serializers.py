@@ -3,7 +3,6 @@ from .models import *
 from products.serializers import * 
 from visitors.serializers import CampaignSerializer,SourceSerializer,MediumSerializer
 
- 
 class HeaderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Header 
@@ -87,52 +86,7 @@ class FeaturesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Features
         fields = '__all__'
-  
-
    
- 
-
-
-
-
-
-
-
- 
-# class Module_Serializer(serializers.ModelSerializer):
-#     product = serializers.SerializerMethodField()
-#     class Meta:
-#         model = Module
-#         fields = ['id', 'module_type', 'product']
-
-#     def get_product(self, obj):
-#         # البحث عن المنتج الأول في الموديول
-#         if obj.product:
-#             return ProductSerializer(obj.product).data
-#         return None
-
-
-# class Section_Serializer(serializers.ModelSerializer):
-#     modules = Module_Serializer(many=True)
-#     class Meta:
-#         model = Section
-#         fields = ['id','modules']
-
-
-# class Page_Serializer(serializers.ModelSerializer):
-#     sections = serializers.SerializerMethodField()
-#     class Meta:
-#         model = Page
-#         fields = ['id', 'title', 'sections']
-
-#     def get_sections(self, obj):
-#         # البحث عن السيكشن الأول في الصفحة
-#         sections = obj.sections.all()
-#         if sections.exists():
-#             return Section_Serializer(sections, many=True).data
-#         return None
-
- 
  
 class Page_Serializer(serializers.ModelSerializer):
     product = serializers.SerializerMethodField()
@@ -179,18 +133,11 @@ class ModuleSerializer(serializers.ModelSerializer):
         model = Module
         fields = [
             'id', 'unique_id', 'module_type', 'mobile_order', 
-            'tablet_order', 'desktop_order',
-              'header', 'slider', 
+            'tablet_order', 'desktop_order', 'header', 'slider', 
             'product', 'content', 'footer', 'image_hight', 'freq', 
-            'youtube', 'video','countdown','card','features_card','features','product_grid'
+            'youtube', 'video', 'countdown', 'card', 'features_card', 
+            'features', 'product_grid'
         ]
-
- 
-
-
-
- 
-
 class SectionSerializer(serializers.ModelSerializer):
     modules = ModuleSerializer(many=True, required=False)  # التأكد من أن الموديولات ليست مطلوبة
     class Meta:
@@ -230,10 +177,7 @@ class LinksSerializer(serializers.ModelSerializer):
         model = Links
         fields = '__all__'
 
- 
-
-
-
+  
 
 class PageSerializer(serializers.ModelSerializer):
     sections = SectionSerializer(many=True, required=False)   
@@ -253,22 +197,6 @@ class PageSerializer(serializers.ModelSerializer):
         return instance 
     
 
-
-# class LinksSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Links
-#         fields = '__all__'
-
-
-
-
- 
-# class HomeSerializer(serializers.ModelSerializer):
-#     page = PageSerializer()  
-
-#     class Meta:
-#         model = Home
-#         fields = '__all__'
  
 class SettingsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -278,7 +206,6 @@ class SettingsSerializer(serializers.ModelSerializer):
 
 class Settings_Serializer(serializers.ModelSerializer):
     home = PageSerializer( read_only=True)
-    
     # about = PageSerializer(required=False)
     # privacy = PageSerializer(required=False)
     # contactUs = PageSerializer(required=False)

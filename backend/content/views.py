@@ -18,8 +18,6 @@ class SettingView(APIView):
       serializer = Settings_Serializer(settings)
       return Response(serializer.data)
 
-
- 
 class PageView(viewsets.ReadOnlyModelViewSet):
     queryset = Page.objects.all()
     serializer_class = PageSerializer
@@ -38,6 +36,60 @@ class PageViewSet(viewsets.ModelViewSet):
     queryset = Page.objects.all()
     serializer_class = PageSerializer
  
+class SliderViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = Slider.objects.all()
+    serializer_class = SliderSerializer
+ 
+
+class FrequentlyAskedViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = FrequentlyAsked.objects.all()
+    serializer_class = FrequentlyAskedSerializer
+ 
+
+class VideoPlayerViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = VideoPlayer.objects.all()
+    serializer_class = VideoPlayerSerializer
+ 
+class YouTubePlayerViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = YouTubePlayer.objects.all()
+    serializer_class = YouTubePlayerSerializer
+ 
+class ImageHightViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = ImageHight.objects.all()
+    serializer_class = ImageHightSerializer
+ 
+class CardViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = Card.objects.all()
+    serializer_class = CardSerializer
+ 
+ 
+
+class FeaturesCardViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = FeaturesCard.objects.all()
+    serializer_class = FeaturesCardSerializer
+ 
+
+
+class FeaturesViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = Features.objects.all()
+    serializer_class = FeaturesSerializer
+ 
+
+class ProductGridViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = ProductGrid.objects.all()
+    serializer_class = ProductGridSerializer
+ 
+ 
+
 
 class LinksViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
@@ -50,8 +102,7 @@ class LinksSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-# https://yourdomain.com/?utm_source=facebook&utm_medium=social&utm_campaign=spring_sale
-
+ 
 class PageLinksView(APIView):
     def get(self, request, pk=None):
         current_site = settings.DOMAIN  # Replace with your actual domain
@@ -129,13 +180,7 @@ class SettingsView(APIView):
             return Response(serializer.data)
     
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
- 
-
-
-
-
-
-
+  
 
 class SectionViewSet(viewsets.ModelViewSet):
      permission_classes = [IsAuthenticated]

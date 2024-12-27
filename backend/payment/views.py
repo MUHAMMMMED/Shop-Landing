@@ -13,10 +13,7 @@ import logging
 from .utils import *
   
 # DOMAIN =settings.DOMAIN
- 
-
- 
-
+  
 DOMAIN ="http://127.0.0.1:8000/"
 
 # Set the Stripe API key
@@ -91,17 +88,6 @@ def create_checkout_session(request: Request):
     except Exception as e:
         logger.error(f'Unexpected error: {str(e)}')
         return JsonResponse({'error': str(e)}, status=403)
-
- 
-
-
-
-
-
-
-
-
-
 
  
 @api_view(['POST'])

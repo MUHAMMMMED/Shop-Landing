@@ -65,9 +65,7 @@ class ShippingAPIView(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Shipping_Company.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-
  
-
 class Shipping_CompanyAPIView(APIView):
     def get(self, request, *args, **kwargs):
         country_id = kwargs.get('id')  
@@ -81,12 +79,7 @@ class Shipping_CompanyAPIView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
         except Cart.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
-
-  
-
-
  
-
 class OrderAPIView(APIView):
     def post(self, request):
         try:

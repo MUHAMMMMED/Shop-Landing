@@ -278,7 +278,6 @@ class CountdownBanner(models.Model):
  
 
 class Content(models.Model):
-
     Themes_TYPES = (
         ('classic', 'Classic'),
         ('simple', 'Simple'),

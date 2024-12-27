@@ -1,0 +1,44 @@
+.Add-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    /* Primary green color */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* text-transform: uppercase; */
+}
+
+.Add-button:hover {
+    background-color: #45a049;
+    /* Slightly darker green for hover effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.Add-button:active {
+    background-color: #3e8e41;
+    /* Even darker green for active state */
+    transform: scale(1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.Add-button svg {
+    margin-left: 8px;
+    /* Space between text and icon */
+    font-size: 20px;
+    /* Icon size */
+    vertical-align: middle;
+}
+
+.Add-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(72, 239, 128, 0.5);
+}

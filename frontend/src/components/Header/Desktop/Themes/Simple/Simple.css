@@ -1,0 +1,850 @@
+/*  
+.header-container {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links ul li a:hover {
+    color: #f9c74f;
+    /* لون التمرير  
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 20px;
+    max-width: 350px;
+    width: 100%;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.search-bar button {
+    background-color: #f9c74f;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.cta-buttons button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    background-color: #f9c74f;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-buttons button:hover {
+    background-color: #d98e1f;
+}
+
+.cart-icon button {
+    background-color: #f9c74f;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.cart-icon button:hover {
+    background-color: #d98e1f;
+}
+
+/* Mobile Responsiveness * 
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .cart-icon {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .cta-buttons button {
+        padding: 8px 16px;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 8px;
+    }
+} */
+
+/* Header.css */
+
+
+
+
+/* 
+
+
+
+
+.header-container {
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+/* شريط التنقل العلوي */
+.top-bar {
+    background-color: #232f3e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.top-bar-left a,
+.top-bar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.top-bar-left a:hover,
+.top-bar-right a:hover {
+    text-decoration: underline;
+}
+
+/* الهيدر الرئيسي */
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* الشعار */
+.logo h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff6a00;
+    /* لون الشعار */
+    margin: 0;
+}
+
+/* قائمة التنقل */
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links ul li a:hover {
+    color: #ff6a00;
+    /* لون التمرير */
+}
+
+/* القائمة المنسدلة */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: none;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 200px;
+}
+
+.dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+}
+
+/* إظهار القائمة المنسدلة */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* شريط البحث */
+.search-bar {
+    display: flex;
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 25px;
+    width: 400px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.search-bar button {
+    background-color: #ff6a00;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* أيقونات المستخدم وسلة التسوق */
+.header-icons button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.header-icons button:hover {
+    background-color: #ff6a00;
+}
+
+/* أيقونة القائمة الجانبية */
+.menu-icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .header-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .header-icons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+*/
+/* Header.css */
+/* 
+.header-container {
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+/* شريط التنقل العلوي  
+.top-bar {
+  background-color: #232f3e;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.top-bar-left a, .top-bar-right a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.top-bar-left a:hover, .top-bar-right a:hover {
+  text-decoration: underline;
+}
+
+/* الهيدر الرئيسي  
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* الشعار  
+.logo h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff6a00; /* لون الشعار  
+  margin: 0;
+}
+
+/* قائمة التنقل  
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links ul li a:hover {
+  color: #ff6a00; /* لون التمرير  
+}
+
+/* القائمة المنسدلة  
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  display: none;
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 250px;
+}
+
+.dropdown-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-item h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #ff6a00;
+}
+
+.subcategory {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subcategory li {
+  padding: 5px 0;
+}
+
+.subcategory li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.subcategory li a:hover {
+  color: #ff6a00;
+}
+
+.dropdown-menu li:hover .subcategory {
+  display: block;
+}
+
+/* إظهار القائمة المنسدلة  
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* أيقونات المستخدم وسلة التسوق  
+.header-icons button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.header-icons button:hover {
+  background-color: #ff6a00;
+}
+
+/* أيقونة القائمة الجانبية  
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .header-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+
+
+
+
+
+
+
+
+ */
+
+
+
+
+
+
+/* Header.css */
+/* Header.css */
+/* 
+.header-container {
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+/* شريط التنقل العلوي  
+.top-bar {
+    background-color: #232f3e;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.top-bar-left a,
+.top-bar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.top-bar-left a:hover,
+.top-bar-right a:hover {
+    text-decoration: underline;
+}
+
+/* الهيدر الرئيسي  
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* الشعار  
+.logo h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff6a00;
+    /* لون الشعار  
+    margin: 0;
+}
+
+/* قائمة التنقل  
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links ul li a:hover {
+    color: #ff6a00;
+    /* لون التمرير  
+}
+
+/* القائمة المنسدلة  
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    display: none;
+    /* border: 1px solid #ddd;  
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    /* تعديل العرض  
+}
+
+.dropdown-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    /* خلفية فاتحة  
+    border-radius: 8px;
+    /* زوايا دائرية  
+    overflow: hidden;
+    /* منع النص من الخروج  
+    transition: background-color 0.3s, transform 0.2s;
+    /* تأثير تفاعلي  
+}
+
+.dropdown-item:hover {
+    background-color: #ff6a00;
+    /* لون الخلفية عند التمرير  
+    transform: scale(1.05);
+    /* تكبير بسيط  
+}
+
+.category-icon {
+    width: 60px;
+    /* تحسين حجم الصورة  
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 8px;
+    /* زوايا دائرية  
+    object-fit: cover;
+    /* التأكد من تناسب الصورة  
+}
+
+.dropdown-item h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+    white-space: nowrap;
+    /* منع النص من الالتفاف  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* نص مختصر في حالة النص الطويل  
+}
+
+.subcategory {
+    list-style: none;
+    padding: 5px 0 0 20px;
+    /* مسافة مناسبة تحت العناوين  
+    margin: 0;
+}
+
+.subcategory li {
+    padding: 5px 0;
+}
+
+.subcategory li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.subcategory li a:hover {
+    color: #ff6a00;
+}
+
+/* إظهار القائمة المنسدلة  
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.subcategory {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* أيقونات المستخدم وسلة التسوق  
+.header-icons button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.header-icons button:hover {
+    background-color: #ff6a00;
+}
+
+/* أيقونة القائمة الجانبية  
+.menu-icon {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .header-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-icons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-start;
+    }
+} */
+
+
+
+
+/* Header Styles */
+.header {
+    font-family: "Arial", sans-serif;
+    background-color: #ffc107;
+    color: #000;
+    width: 100%;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #ffc107;
+}
+
+
+.header-left span,
+.header-right button {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.header-left .language,
+.header-left .currency {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.header-right button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    position: relative;
+}
+
+.header-right .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 10px;
+}
+
+.header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.header-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-logo span {
+    color: #fff;
+}
+
+.header-search {
+    flex: 1;
+    margin: 0 20px;
+    display: flex;
+}
+
+.header-search input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.header-search button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.header-nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+}
+
+.categories {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-search {
+        margin: 10px 0;
+    }
+
+    .header-nav {
+        display: none;
+    }
+}

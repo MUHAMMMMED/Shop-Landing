@@ -119,13 +119,7 @@ class Product_update_Serializer(serializers.ModelSerializer):
         validated_data.pop('images', None)
         return super().update(instance, validated_data)
 
-  
-
-
-
-
-
-
+   
 class CategorySerializer(serializers.ModelSerializer):
     product = ProductSerializer(many=True, read_only=True)  # استخدم related_name 'products'
     class Meta:

@@ -11,11 +11,23 @@ router.register(r'page-details', PageView, basename='page-view')
 router.register(r'sections', SectionViewSet,basename='sections')
 router.register(r'modules', ModuleViewSet,basename='modules')
 router.register(r'links', LinksViewSet,basename='links')
+router.register(r'slider', SliderViewSet,basename='slider')
+router.register(r'faq', FrequentlyAskedViewSet,basename='faq')
+router.register(r'video', VideoPlayerViewSet,basename='video')
+router.register(r'youtube', YouTubePlayerViewSet,basename='youtube')
+router.register(r'image_hight', ImageHightViewSet,basename='image-hight')
+router.register(r'card', CardViewSet,basename='card')
+router.register(r'features_card', FeaturesCardViewSet,basename='features_card')
+router.register(r'features', FeaturesViewSet,basename='features')
+router.register(r'product_grid',ProductGridViewSet,basename='product_grid')
 
-# urlpatterns = router.urls
+
+
+
+
  
 
-
+ 
 urlpatterns = [
     path('setting-view/', SettingView.as_view(), name='setting-view'),
     path('update-section-order/', UpdateSectionOrderView.as_view(), name='update-section-order'),
@@ -26,12 +38,7 @@ urlpatterns = [
     path('settings/', SettingsView.as_view(), name='settings'),
     path('page-link/<int:pk>/', PageLinksView.as_view(), name='page-link'),
 
-
-
-   
-    
-
-
+ 
     
  
 ]

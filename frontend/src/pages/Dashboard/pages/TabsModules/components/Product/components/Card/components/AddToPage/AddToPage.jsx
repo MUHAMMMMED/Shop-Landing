@@ -28,7 +28,7 @@ export default function AddToPage({ Id, pageId, sectionId, module_name }) {
 
     return (
         <button className="tab-card-button" onClick={handleAddToPage}>
-            Add to page {pageId}, {sectionId}
+            Add to page
         </button>
     );
 }

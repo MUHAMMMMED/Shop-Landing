@@ -59,6 +59,9 @@ export default function Modules({ section, selectedDevice, language, fetchData }
     return <Component data={module} device_Types={selectedDevice} language={language} fetchData={fetchData} />;
   };
 
+
+
+
   // Function to render content based on module type
   const ModuleContent = ({ module }) => {
     const moduleType = module?.module_type?.toLowerCase?.(); // Safely access and convert to lowercase

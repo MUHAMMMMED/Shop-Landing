@@ -1,7 +1,7 @@
 /* Card container */
 .tab-card {
     float: left;
-    width: 250px;
+    width: 150px;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -23,36 +23,38 @@
 .tab-card-image img {
     width: 100%;
     height: auto;
-    /* border-radius: 50%; */
+
 }
 
 /* Card content section */
 .tab-card-content {
-    padding: 20px;
+    padding: 2px;
     text-align: center;
 }
 
 .card-title {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
 }
 
 .tab-card-text {
     font-size: 14px;
     color: #666;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 /* Card button */
 .tab-card-button {
+    width: 100%;
     padding: 10px 20px;
     font-size: 14px;
-    color: #000000;
-    background-color: transparent;
-    border: 2px solid #000000;
-    border-radius: 6px;
+    color: #353232;
+    /* background-color: transparent; */
+    border-top: 1px solid #ccc;
+    background-color: #dddddd29;
+    border-radius: 0px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
