@@ -84,12 +84,12 @@ AUTH_USER_MODEL = 'accounts.User'
  
  
 
-# يجب أن تكون جميع الجلسات عبر HTTPS
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # حفظ الجلسات في قاعدة البيانات
+ 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  
 
-# تعيين عمر الجلسة (مثال: سنة)
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 365  # مدة الجلسة (في الثانية)
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # الجلسة لا تنتهي عند إغلاق المتصفح
+ 
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 365  
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False   
 
 # استخدام ملفات الكوكيز بشكل آمن مع HTTPS
 SESSION_COOKIE_SECURE = True  # تأكد من إرسال الكوكيز عبر HTTPS فقط
