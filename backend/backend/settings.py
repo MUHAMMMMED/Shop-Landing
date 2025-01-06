@@ -80,21 +80,44 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.User'
-
-
-CORS_ALLOW_ALL_ORIGINS=True
-CORS_ALLOW_CREDENTIALS=True
-  
-
-
-DOMAIN="https://smartcardnfc.com"
-CSRF_TRUSTED_ORIGINS = ["https://smartcardnfc.com" ]
-
-# CSRF_TRUSTED_ORIGINS = [ 'http://localhost:3000'] 
-# DOMAIN = "http://localhost:3000" 
-
-
  
+ 
+ 
+
+# يجب أن تكون جميع الجلسات عبر HTTPS
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # حفظ الجلسات في قاعدة البيانات
+
+# تعيين عمر الجلسة (مثال: سنة)
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 365  # مدة الجلسة (في الثانية)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # الجلسة لا تنتهي عند إغلاق المتصفح
+
+# استخدام ملفات الكوكيز بشكل آمن مع HTTPS
+SESSION_COOKIE_SECURE = True  # تأكد من إرسال الكوكيز عبر HTTPS فقط
+SESSION_COOKIE_HTTPONLY = True  # التأكد من أن الكوكيز غير قابلة للوصول من خلال JavaScript
+SESSION_COOKIE_SAMESITE = 'Lax'  # تحديد سياسة الكوكيز "SameSite" لتقييد إرسال الكوكيز في سياقات معينة
+
+# تفعيل CSRF
+CSRF_COOKIE_SECURE = True  # إرسال CSRF فقط عبر HTTPS
+CSRF_COOKIE_HTTPONLY = True  # التأكد من أن الكوكيز غير قابلة للوصول من JavaScript
+CSRF_COOKIE_SAMESITE = 'Lax'  # سياسة SameSite للكوكيز
+
+# CORS - السماح للأصول الموثوقة
+CORS_ALLOW_CREDENTIALS = True  # السماح بإرسال الكوكيز عبر CORS
+CORS_ALLOWED_ORIGINS = [
+    'https://smartcardnfc.com',  
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://smartcardnfc.com',  
+]
+
+
+
+
+
+
+
+
 
 # Using PostgreSQL
 
@@ -153,13 +176,7 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
- 
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 1365  
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False   
-
-
-
+  
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Africa/Cairo'
