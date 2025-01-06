@@ -90,7 +90,6 @@ CORS_ALLOW_CREDENTIALS=True
 DOMAIN="https://smartcardnfc.com"
 CSRF_TRUSTED_ORIGINS = ["https://smartcardnfc.com" ]
 
- 
 # CSRF_TRUSTED_ORIGINS = [ 'http://localhost:3000'] 
 # DOMAIN = "http://localhost:3000" 
 
