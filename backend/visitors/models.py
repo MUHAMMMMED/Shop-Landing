@@ -3,9 +3,9 @@ from django.utils import timezone
 
 class Date(models.Model):
     date = models.DateField(default=timezone.now, unique=True)
-
-    def __str__(self):
-        return str(self.date)
+ 
+    # def __str__(self):
+    #     return str(self.date)
 
 class Hour(models.Model):
     hour = models.IntegerField(unique=True)
@@ -96,8 +96,6 @@ class UserVisit(models.Model):
     operating_system = models.ForeignKey(OperatingSystem, on_delete=models.CASCADE, related_name='user_visits', blank=True, null=True)
     browser = models.ForeignKey(Browser, on_delete=models.CASCADE, related_name='user_visits', blank=True, null=True)
    
-
-    
     def __str__(self):
         return f"Visit on {self.created_at} from {self.country}"
  
@@ -173,97 +171,3 @@ class ProductHourlyVisit(models.Model):
 
 
 
-
-
-# لجلب كل المدن في دولة معينة
-# country = Country.objects.get(place_name__name="Egypt")
-# regions = country.regions.all()
-# for region in regions:
-#     cities = region.cities.all()
-
-
-# from django.db.models import Q
-
-# # نفترض أن أسماء الدولة والمنطقة والمدينة موجودة بالفعل في PlaceDictionary
-# country_name = "مصر"
-# region_name = "القاهرة الكبرى"
-# city_name = "القاهرة"
-
-
-# # نبدأ بتنفيذ الاستعلام
-# user_visits = UserVisit.objects.filter(
-#     country__name__name=country_name,
-#     region__name__name=region_name,
-#     city__name__name=city_name
-# )
-
-
-# تحسين الاستعلام باستخدام Q للمرونة
-
-# إذا كنت تحتاج إلى استعلام أكثر مرونة، وتريد البحث عن زيارات تتطابق مع دولة أو منطقة أو مدينة معينة فقط، يمكنك استخدام كائنات Q لدمج شروط متعددة في استعلام واحد:
-
-
-# from django.db.models import Q
-
-# user_visits = UserVisit.objects.filter(
-#     Q(country__name__name=country_name) &
-#     Q(region__name__name=region_name) &
-#     Q(city__name__name=city_name)
-# )
-
-
-# for visit in user_visits:
-#     print(f"User Visit ID: {visit.id}, Country: {visit.country.name}, Region: {visit.region.name}, City: {visit.city.name}")
-
-
-# from django.db.models import Q
-# from django.utils import timezone
-
-# # افتراض التواريخ المطلوبة لنطاق البحث
-# start_date = timezone.datetime(2024, 1, 1)
-# end_date = timezone.datetime(2024, 12, 31)
-
-# # بيانات المواقع التي نبحث عنها
-# country_name = "مصر"
-# region_name = "القاهرة الكبرى"
-# city_name = "القاهرة"
-
-# # استعلام لتصفية البيانات بناءً على نطاق التاريخ والموقع
-# user_visits = UserVisit.objects.filter(
-#     Q(date__date__range=(start_date, end_date)) &  # فلترة ضمن نطاق التاريخ
-#     Q(country__name__name=country_name) &          # فلترة على أساس الدولة
-#     Q(region__name__name=region_name) &            # فلترة على أساس المنطقة
-#     Q(city__name__name=city_name)                  # فلترة على أساس المدينة
-# )
-
-
-# device_name = "هاتف محمول"
-# os_name = "Android"
-# source_name = "Google"
-# medium_name = "Organic"
-
-# user_visits = UserVisit.objects.filter(
-#     Q(date__date__range=(start_date, end_date)) &
-#     Q(country__name__name=country_name) &
-#     Q(region__name__name=region_name) &
-#     Q(city__name__name=city_name) &
-#     Q(device__name__name=device_name) &
-#     Q(operating_system__name__name=os_name) &
-#     Q(source__dictionary_source__name=source_name) &
-#     Q(medium__dictionary_medium__name=medium_name)
-# )
-
-
-# user_visits = UserVisit.objects.filter(
-#     date__date__range=(start_date, end_date)
-# )
-
-# # للوصول إلى hourly visits لكل user_visit
-# for visit in user_visits:
-#     hourly_visits = visit.hourly_visits.all()  # هذا سيجلب جميع الساعات المرتبطة بهذه الزيارة
-
-
-
-
-
- 

@@ -405,7 +405,7 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                         </div>
                         <div>
                           <img
-                            src={`${Config.baseURL}/${company?.image}`}
+                            src={`${Config.baseURL}${company?.image}`}
                             height="35"
                             className="Delivery-option-icon"
                             alt="Delivery Option Icon"

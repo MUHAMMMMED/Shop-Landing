@@ -23,7 +23,6 @@ class ProductDashView(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
- 
 
 class ProductListAPIView(APIView):
     permission_classes = [IsAuthenticated] 

@@ -25,7 +25,7 @@ router.register(r'source', SourceViewSet)
 # تعريف الـ urlpatterns
 urlpatterns = [
     # path('record-visitor/', RecordVisitorView.as_view(), name='record-visitor'),  # إضافة مسار لتسجيل الزيارة
-    path('home/', home, name='home'),  # إضافة مسار للصفحة الرئيسية
+    # path('home/', home, name='home'),   
     # path('', include(router.urls)),  # تضمين جميع URLs من الراوتر
 ]
 # Include the router URLs

@@ -1,37 +1,29 @@
-/* Video container for responsiveness */
-.video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    background-color: #ffffff;
-    /* Fallback background for better visibility */
-    overflow: hidden;
-    position: relative;
-    padding: 20px;
-}
+ .video-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: auto;
+     background-color: #ffffff;
+     overflow: hidden;
+     position: relative;
+     padding: 20px;
+ }
 
-/* Styling for the video element */
-video {
-    width: 100%;
-    /* max-width: 1200px; */
-    /* Adjust for larger screens */
-    height: auto;
-    border-radius: 10px;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
-    /* Soft shadow effect */
-    object-fit: cover;
-}
 
-/* Optional: Add hover effect for the video poster */
-video:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
-    /* Enhanced shadow on hover */
-    transition: box-shadow 0.3s ease-in-out;
-}
+ video {
+     width: 100%;
+     height: auto;
+     border-radius: 10px;
+     object-fit: cover;
+ }
 
-/* Make sure the poster image is responsive */
-video::poster {
-    object-fit: cover;
-}
+ video:hover {
+     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+     transition: box-shadow 0.3s ease-in-out;
+ }
+
+
+ video::poster {
+     object-fit: cover;
+ }

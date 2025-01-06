@@ -1,25 +1,34 @@
 
 import React from "react";
-import './Simple.css';
+import Config from "../../../../config";
+import "./Simple.css";
 
 export default function Simple({ data }) {
-  // Determine the appropriate image to display
-  const Image = data?.mobile;
-  // const Image = data?.web;
+  const Image = data?.mobile; // Replace `data?.web` with `data?.mobile` for mobile images.
+
+  const getFullImageUrl = (image) => {
+    if (image && !image.startsWith("http")) {
+      return `${Config.baseURL}${image}`;
+    }
+    return image;
+  };
+
   return (
-    <>
-      {Image && (
-        <div style={{ float: 'right', width: '100%', marginBottom: '20px' }}>
-          <div className="height_image-grid">
-            <img
-              src={Image}
-              alt="height image"
-              className="height_image-grid-image"
-            />
-          </div>
+    <div style={{ float: "right", width: "100%", marginBottom: "20px" }}>
+      {Image ? (
+        <div className="height_image-grid">
+          <img
+            src={getFullImageUrl(Image)}
+            alt="Height-based image"
+            className="height_image-grid-image"
+          />
         </div>
+      ) : (
+        <p style={{ textAlign: "center", color: "#999" }}>
+          No image available to display.
+        </p>
       )}
-    </>
+    </div>
   );
 }
 

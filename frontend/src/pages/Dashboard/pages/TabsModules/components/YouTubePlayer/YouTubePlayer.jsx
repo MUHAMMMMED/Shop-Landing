@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import AxiosInstance from '../../../../../../Authentication/AxiosInstance';
 import useWindowSize from '../../../../../../Hooks/useWindowSize';
 import ClassicDesktop from '../../../../../../components/YouTubePlayer/Desktop/Themes/Classic/Classic';
@@ -11,16 +12,17 @@ import ClassicTablet from '../../../../../../components/YouTubePlayer/Tablet/The
 import ModernTablet from '../../../../../../components/YouTubePlayer/Tablet/Themes/Modern/Modern';
 import SimpleTablet from '../../../../../../components/YouTubePlayer/Tablet/Themes/Simple/Simple';
 import Config from '../../../../../../components/config';
-import Add from './components/Add/Add';
+import Add from '../Add/Add';
+import TabHeader from '../TabHeader/TabHeader';
 import './styles.css';
 
-const YouTubePlayer = ({ pageId, sectionId }) => {
+const YouTubePlayer = ({ pageId, sectionId, language }) => {
     const [data, setData] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const { width } = useWindowSize();
-    const language = 'ar';
+
 
     useEffect(() => {
         AxiosInstance.get(`${Config.baseURL}/api/content/youtube/`)
@@ -82,35 +84,41 @@ const YouTubePlayer = ({ pageId, sectionId }) => {
     const module_name = 'youtube';
 
     return (
-        <div className="Main-container ">
-            {/* <h1 style={{ color: '#000' }}>{language === 'ar' ? 'عرض السلايدر' : 'Slider Display'}</h1> */}
+        <>
 
-            <div className="button-container">
-                <button className='Main-button'
-                    onClick={() => setCurrentIndex((prev) => Math.max(prev - 1, 0))}
-                    disabled={currentIndex === 0}   >
+            <TabHeader name={language === "ar" ? "مشغل يوتيوب" : "YouTubePlayer"} link={`/create-youtube/${pageId}/${sectionId}/`} language={language} /> {/* Header for the table */}
 
-                    &#8592; {language === 'ar' ? 'السابق' : 'Prev'}
-                </button>
 
-                <Add
-                    Id={currentData?.id}
-                    pageId={pageId}
-                    sectionId={sectionId}
-                    module_name={module_name}
-                    language={language}
-                />
-                <button
-                    className='Main-button'
-                    onClick={() => setCurrentIndex((prev) => Math.min(prev + 1, data.length - 1))}
-                    disabled={currentIndex === data.length - 1}
-                >
-                    {language === 'ar' ? 'التالي' : 'Next'} &#8594;
-                </button>
-            </div>
+            <div className="Main-container ">
 
-            {render()}
-        </div>
+                <div className="button-container">
+                    <button className='Main-button'
+                        onClick={() => setCurrentIndex((prev) => Math.max(prev - 1, 0))}
+                        disabled={currentIndex === 0}   >
+
+                        &#8592; {language === 'ar' ? 'السابق' : 'Prev'}
+                    </button>
+                    <Link to={`/update-youtube/${currentData?.id}/${pageId}/${sectionId}`} className='Main-button' >update</Link>
+
+
+                    <Add
+                        Id={currentData?.id}
+                        pageId={pageId}
+                        sectionId={sectionId}
+                        module_name={module_name}
+                        language={language}
+                    />
+                    <button
+                        className='Main-button'
+                        onClick={() => setCurrentIndex((prev) => Math.min(prev + 1, data.length - 1))}
+                        disabled={currentIndex === data.length - 1}
+                    >
+                        {language === 'ar' ? 'التالي' : 'Next'} &#8594;
+                    </button>
+                </div>
+
+                {render()}
+            </div></>
     );
 };
 

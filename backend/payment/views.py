@@ -11,15 +11,14 @@ import json
 import stripe
 import logging
 from .utils import *
-  
-# DOMAIN =settings.DOMAIN
-  
-DOMAIN ="http://127.0.0.1:8000/"
+from django.conf import settings
 
+
+DOMAIN = settings.DOMAIN
+ 
+ 
 # Set the Stripe API key
-stripe.api_key = ''
-STRIPE_WEBHOOK_SECRET=' '
-
+stripe.api_key = settings.STRIPE_SECRET_KEY
  
  
 
@@ -61,15 +60,14 @@ def create_checkout_session(request: Request):
                 },
                 'quantity': 1,
             })
-
+ 
         checkout_session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=line_items,
             mode='payment',
-            # success_url=f'{DOMAIN}/success/{order_id}',
-            success_url=f'http://localhost:3000/success',
-            
-            cancel_url=f'{DOMAIN}/cancel',
+ 
+            success_url=f'{DOMAIN}/success',
+            # cancel_url=f'{DOMAIN}/cancel',
             metadata={
                 "session_id": session_id,
                 "order_id": order_id,
@@ -98,7 +96,7 @@ def stripe_webhook(request):
     sig_header = request.META.get("HTTP_STRIPE_SIGNATURE", "")
 
     try:
-        event = stripe.Webhook.construct_event(payload, sig_header, STRIPE_WEBHOOK_SECRET)
+        event = stripe.Webhook.construct_event(payload, sig_header,  settings.STRIPE_WEBHOOK_SECRET)
     except ValueError:
         logger.error("Invalid payload")
         return JsonResponse({'error': "Invalid payload"}, status=400)

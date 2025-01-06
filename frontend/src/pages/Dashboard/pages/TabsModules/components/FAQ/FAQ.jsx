@@ -11,16 +11,17 @@ import ClassicTablet from '../../../../../../components/FAQ/Tablet/Themes/Classi
 import ModernTablet from '../../../../../../components/FAQ/Tablet/Themes/Modern/Modern';
 import SimpleTablet from '../../../../../../components/FAQ/Tablet/Themes/Simple/Simple';
 import Config from '../../../../../../components/config';
-import Add from './components/Add/Add';
+import Add from '../Add/Add';
+import TabHeader from '../TabHeader/TabHeader';
 import './styles.css';
 
-const FAQ = ({ pageId, sectionId }) => {
+const FAQ = ({ pageId, sectionId, language }) => {
     const [data, setData] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const { width } = useWindowSize();
-    const language = 'ar';
+
 
     useEffect(() => {
         AxiosInstance.get(`${Config.baseURL}/api/content/faq/`)
@@ -82,35 +83,37 @@ const FAQ = ({ pageId, sectionId }) => {
     const module_name = 'Slider';
 
     return (
-        <div className="Main-container ">
-            {/* <h1 style={{ color: '#000' }}>{language === 'ar' ? 'عرض السلايدر' : 'Slider Display'}</h1> */}
+        <>
+            <TabHeader name={language === "ar" ? "الأسئلة الشائعة" : "FAQ"} link={`/create-faq/${pageId}/${sectionId}/`} language={language} /> {/* Header for the table */}
+            <div className="Main-container ">
 
-            <div className="button-container">
-                <button className='Main-button'
-                    onClick={() => setCurrentIndex((prev) => Math.max(prev - 1, 0))}
-                    disabled={currentIndex === 0}   >
+                <div className="button-container">
+                    <button className='Main-button'
+                        onClick={() => setCurrentIndex((prev) => Math.max(prev - 1, 0))}
+                        disabled={currentIndex === 0}   >
 
-                    &#8592; {language === 'ar' ? 'السابق' : 'Prev'}
-                </button>
+                        &#8592; {language === 'ar' ? 'السابق' : 'Prev'}
+                    </button>
 
-                <Add
-                    Id={currentData?.id}
-                    pageId={pageId}
-                    sectionId={sectionId}
-                    module_name={module_name}
-                    language={language}
-                />
-                <button
-                    className='Main-button'
-                    onClick={() => setCurrentIndex((prev) => Math.min(prev + 1, data.length - 1))}
-                    disabled={currentIndex === data.length - 1}
-                >
-                    {language === 'ar' ? 'التالي' : 'Next'} &#8594;
-                </button>
+                    <Add
+                        Id={currentData?.id}
+                        pageId={pageId}
+                        sectionId={sectionId}
+                        module_name={module_name}
+                        language={language}
+                    />
+                    <button
+                        className='Main-button'
+                        onClick={() => setCurrentIndex((prev) => Math.min(prev + 1, data.length - 1))}
+                        disabled={currentIndex === data.length - 1}
+                    >
+                        {language === 'ar' ? 'التالي' : 'Next'} &#8594;
+                    </button>
+                </div>
+
+                {render()}
             </div>
-
-            {render()}
-        </div>
+        </>
     );
 };
 

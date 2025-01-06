@@ -11,12 +11,14 @@ from .utils import *
 from rest_framework import viewsets
  
 class AddToCartView(APIView):
+  
     def post(self, request, *args, **kwargs):
         # Extract the product ID, quantity, and notes from the request body
         product_id = request.data.get('productId')
         quantity = request.data.get('quantity', 1)  # Default quantity is 1 if not provided
         notes = request.data.get('notes', [])  # Notes are optional
- 
+        session_id = request.session.session_key
+    
         # Check if there is an existing session
         if request.session.session_key:
             session_id = request.session.session_key  # Get the current session ID
@@ -99,6 +101,7 @@ class AddToCartView(APIView):
 class CartDetailView(APIView):
     def get(self, request, *args, **kwargs):
         session_id = request.session.session_key
+ 
         # Fetch the cart based on the session ID
         cart = get_object_or_404(Cart, session_id=session_id)
 

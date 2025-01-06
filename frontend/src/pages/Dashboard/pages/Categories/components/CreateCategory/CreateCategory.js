@@ -1,9 +1,9 @@
 
-import axios from 'axios';
 import React, { useState } from 'react';
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 import 'react-quill/dist/quill.snow.css';
 import { Link, useNavigate } from 'react-router-dom';
+import AxiosInstance from '../../../../../../Authentication/AxiosInstance';
 import Config from '../../../../../../components/config';
 import DasHeader from '../../../../components/DasHeader/DasHeader';
 import Sidebar from '../../../../components/Sidebar/Sidebar';
@@ -67,7 +67,7 @@ const CreateCategory = () => {
         formData.append('image', Data.image);
 
         try {
-            const response = await axios.post(`${Config.baseURL}/api/products/categories_dash/`, formData, {
+            const response = await AxiosInstance.post(`${Config.baseURL}/api/products/categories_dash/`, formData, {
 
                 headers: { 'Content-Type': 'multipart/form-data' },
             });

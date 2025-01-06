@@ -120,6 +120,7 @@ export default function ProductDetails({ data, language, fetchData }) {
         <SpecialOffer coupon={data?.coupon} language={language} />}
       {!isAddedToCart && (
 
+
         <div className={`Desktop-quantity ${language === 'ar' ? 'rtl' : 'ltr'}`}>
           <>
             {/* Quantity Control */}
@@ -128,6 +129,7 @@ export default function ProductDetails({ data, language, fetchData }) {
                 {language === "ar" ? "الكمية" : "Quantity"}
 
               </h3>
+
               <div className="Desktop-quantity-but">
                 <button className="Desktop-quantity-button" onClick={decreaseQuantity}>
                   -
@@ -138,7 +140,7 @@ export default function ProductDetails({ data, language, fetchData }) {
                 </button>
               </div>
             </div>
-
+            <div style={{ width: "100%", float: "left" }} />
             {data?.is_active_note === true && (
               <>
                 <div className="Desktop-notes-section">

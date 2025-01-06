@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import AxiosInstance from '../../../../../../Authentication/AxiosInstance';
 import useWindowSize from '../../../../../../Hooks/useWindowSize';
 import ClassicDesktop from '../../../../../../components/Slider/Desktop/Themes/Classic/Classic';
@@ -11,16 +12,17 @@ import ClassicTablet from '../../../../../../components/Slider/Tablet/Themes/Cla
 import ModernTablet from '../../../../../../components/Slider/Tablet/Themes/Modern/Modern';
 import SimpleTablet from '../../../../../../components/Slider/Tablet/Themes/Simple/Simple';
 import Config from '../../../../../../components/config';
-import Add from './components/Add/Add';
+import Add from '../Add/Add';
+import TabHeader from '../TabHeader/TabHeader';
 import './styles.css';
 
-const Slider = ({ pageId, sectionId }) => {
+const Slider = ({ pageId, sectionId, language }) => {
     const [data, setData] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const { width } = useWindowSize();
-    const language = 'ar';
+
 
     useEffect(() => {
         AxiosInstance.get(`${Config.baseURL}/api/content/slider/`)
@@ -81,9 +83,11 @@ const Slider = ({ pageId, sectionId }) => {
 
     const module_name = 'Slider';
 
-    return (
+    return (<>
+        <TabHeader name={language === "ar" ? "السلايدر" : "Slider"} link={`/create-slider/${pageId}/${sectionId}/`} language={language} /> {/* Header for the table */}
+
         <div className="Main-container ">
-            {/* <h1 style={{ color: '#000' }}>{language === 'ar' ? 'عرض السلايدر' : 'Slider Display'}</h1> */}
+
 
             <div className="button-container">
                 <button className='Main-button'
@@ -92,6 +96,10 @@ const Slider = ({ pageId, sectionId }) => {
 
                     &#8592; {language === 'ar' ? 'السابق' : 'Prev'}
                 </button>
+
+                <Link to={`/update-slider/${currentData?.id}/${pageId}/${sectionId}`} className='Main-button' >update</Link>
+
+
 
                 <Add
                     Id={currentData?.id}
@@ -110,7 +118,7 @@ const Slider = ({ pageId, sectionId }) => {
             </div>
 
             {render()}
-        </div>
+        </div></>
     );
 };
 

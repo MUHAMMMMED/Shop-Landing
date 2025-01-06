@@ -12,6 +12,10 @@ router.register(r'sections', SectionViewSet,basename='sections')
 router.register(r'modules', ModuleViewSet,basename='modules')
 router.register(r'links', LinksViewSet,basename='links')
 router.register(r'slider', SliderViewSet,basename='slider')
+router.register(r'image_slider', ImageSliderViewSet,basename='image_slider')
+
+
+
 router.register(r'faq', FrequentlyAskedViewSet,basename='faq')
 router.register(r'video', VideoPlayerViewSet,basename='video')
 router.register(r'youtube', YouTubePlayerViewSet,basename='youtube')

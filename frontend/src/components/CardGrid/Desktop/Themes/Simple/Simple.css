@@ -38,7 +38,7 @@
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.5);
-    /* Dark overlay */
+
     color: white;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -47,7 +47,7 @@
 
 .card:hover .card-overlay {
     opacity: 1;
-    /* Show text on hover */
+
 }
 
 .card-overlay h3 {

@@ -4,9 +4,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from .models import *
 from .serializers import *
-# from products.models import Product
 from django.db.models import Q
-from django.shortcuts import get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 from .utils import *
 from django.conf import settings  
@@ -18,10 +16,11 @@ class SettingView(APIView):
       serializer = Settings_Serializer(settings)
       return Response(serializer.data)
 
+
+
 class PageView(viewsets.ReadOnlyModelViewSet):
     queryset = Page.objects.all()
     serializer_class = PageSerializer
-    
     # Override get_queryset to allow fetching by ID
     def get_queryset(self):
         # Get the 'id' parameter from the URL
@@ -36,10 +35,31 @@ class PageViewSet(viewsets.ModelViewSet):
     queryset = Page.objects.all()
     serializer_class = PageSerializer
  
+class ImageSliderViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = ImageSlider.objects.all()
+    serializer_class = ImageSliderSerializer
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        product_id = self.request.data.get('slider_id')
+        if product_id:
+            context['slider_id'] = product_id
+        return context
+      
+ 
+
 class SliderViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = Slider.objects.all()
     serializer_class = SliderSerializer
+    def create(self, request, *args, **kwargs):
+        print(request.data)
+        serializer = self.get_serializer(data=request.data)
+        if not serializer.is_valid():
+            print(serializer.errors)
+            return Response(serializer.errors, status=400)
+        self.perform_create(serializer)
+        return Response(serializer.data, status=201)
  
 
 class FrequentlyAskedViewSet(viewsets.ModelViewSet):
@@ -62,18 +82,70 @@ class ImageHightViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = ImageHight.objects.all()
     serializer_class = ImageHightSerializer
+   
+
+    def update(self, request, *args, **kwargs):
+     
+        print(request.data)
+        serializer = self.get_serializer(data=request.data)
+        if not serializer.is_valid():
+            print(serializer.errors)
+            return Response(serializer.errors, status=400)
+        self.perform_create(serializer)
+        return Response(serializer.data, status=201)
  
+
+
+
 class CardViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = Card.objects.all()
     serializer_class = CardSerializer
+    def create(self, request, *args, **kwargs):
+        print(request.data)
+        serializer = self.get_serializer(data=request.data)
+        if not serializer.is_valid():
+            print(serializer.errors)
+            return Response(serializer.errors, status=400)
+        self.perform_create(serializer)
+        return Response(serializer.data, status=201)
  
  
-
 class FeaturesCardViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = FeaturesCard.objects.all()
     serializer_class = FeaturesCardSerializer
+
+    # def create(self, request, *args, **kwargs):
+    #     # Debugging to see the incoming request data
+    #     print(request.data)
+
+    #     # Initialize an empty list to hold the processed content
+    #     content_data = []
+
+    #     # Loop through content items by index
+    #     for i in range(len(request.data.getlist('content[0][title]'))):  # Assuming the number of content items is consistent
+    #         title = request.data.get(f'content[{i}][title]')
+    #         description = request.data.get(f'content[{i}][description]')
+    #         image = request.data.get(f'content[{i}][image]')
+
+    #         # Debugging print statements
+    #         print('-----------------------------------------')
+    #         print(f'Content {i}:')
+    #         print('Title:', title)
+    #         print('Description:', description)
+    #         print('Image:', image)
+
+    #         # You can process the image or save it to the model if necessary
+    #         content_data.append({
+    #             'title': title,
+    #             'description': description,
+    #             'image': image,
+    #         })
+
+    #     # After processing all content items, you can return the response
+    #     return Response({"message": "Content processed successfully", "data": content_data}, status=status.HTTP_200_OK)
+
  
 
 
@@ -82,15 +154,14 @@ class FeaturesViewSet(viewsets.ModelViewSet):
     queryset = Features.objects.all()
     serializer_class = FeaturesSerializer
  
+ 
 
 class ProductGridViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = ProductGrid.objects.all()
     serializer_class = ProductGridSerializer
  
- 
-
-
+  
 class LinksViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = Links.objects.all()
@@ -153,10 +224,7 @@ class PageLinksView(APIView):
             })
 
         return Response(data, status=status.HTTP_200_OK)
-
-
-
-
+ 
 
 class SettingsView(APIView):
     permission_classes = [IsAuthenticated]

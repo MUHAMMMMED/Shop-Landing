@@ -25,19 +25,19 @@ export default function TabsModules() {
         setLanguage(newLanguage);
     };
 
+
     const tabs = [
-        { name: language === "ar" ? "الرأس" : "Header", component: <Header pageId={page_id} sectionId={section_id} /> },
-        { name: language === "ar" ? "السلايدر" : "Slider", component: <Slider pageId={page_id} sectionId={section_id} /> },
-        { name: language === "ar" ? "المنتج" : "Product", component: <Product pageId={page_id} sectionId={section_id} /> },
-        { name: language === "ar" ? "الأسئلة الشائعة" : "FAQ", component: <FAQ pageId={page_id} sectionId={section_id} /> },
-        { name: language === "ar" ? "مشغل الفيديو" : "VideoPlayer", component: <VideoPlayer pageId={page_id} sectionId={section_id} /> },
-        { name: language === "ar" ? "مشغل يوتيوب" : "YouTubePlayer", component: <YouTubePlayer pageId={page_id} sectionId={section_id} /> },
-        { name: language === "ar" ? "صورة عالية" : "HeightImage", component: <HeightImage pageId={page_id} sectionId={section_id} /> },
-        { name: language === "ar" ? "شبكة البطاقات" : "CardGrid", component: <CardGrid pageId={page_id} sectionId={section_id} /> },
-        { name: language === "ar" ? "المميزات" : "Features", component: <Features pageId={page_id} sectionId={section_id} /> },
-        { name: language === "ar" ? "مميزات المنتج" : "ProductFeatures", component: <ProductFeatures pageId={page_id} sectionId={section_id} /> },
-        { name: language === "ar" ? "المحتوى" : "Content", component: <h1 style={{ color: '#000' }}>Content {section_id}{page_id} </h1> },
-        { name: language === "ar" ? "الأكثر مبيعًا" : "BestSeller", component: <BestSeller pageId={page_id} sectionId={section_id} /> },
+        { name: language === "ar" ? "الرأس" : "Header", component: <Header pageId={page_id} sectionId={section_id} language={language} /> },
+        { name: language === "ar" ? "السلايدر" : "Slider", component: <Slider pageId={page_id} sectionId={section_id} language={language} /> },
+        { name: language === "ar" ? "المنتج" : "Product", component: <Product pageId={page_id} sectionId={section_id} language={language} /> },
+        { name: language === "ar" ? "الأسئلة الشائعة" : "FAQ", component: <FAQ pageId={page_id} sectionId={section_id} language={language} /> },
+        { name: language === "ar" ? "مشغل الفيديو" : "VideoPlayer", component: <VideoPlayer pageId={page_id} sectionId={section_id} language={language} /> },
+        { name: language === "ar" ? "مشغل يوتيوب" : "YouTubePlayer", component: <YouTubePlayer pageId={page_id} sectionId={section_id} language={language} /> },
+        { name: language === "ar" ? "صورة عالية" : "HeightImage", component: <HeightImage pageId={page_id} sectionId={section_id} language={language} /> },
+        { name: language === "ar" ? "شبكة البطاقات" : "CardGrid", component: <CardGrid pageId={page_id} sectionId={section_id} language={language} /> },
+        { name: language === "ar" ? "المميزات" : "Features", component: <Features pageId={page_id} sectionId={section_id} language={language} /> },
+        { name: language === "ar" ? "مميزات المنتج" : "ProductFeatures", component: <ProductFeatures pageId={page_id} sectionId={section_id} language={language} /> },
+        { name: language === "ar" ? "الأكثر مبيعًا" : "BestSeller", component: <BestSeller pageId={page_id} sectionId={section_id} language={language} /> },
         { name: language === "ar" ? "التذييل" : "Footer", component: <Footer /> },
     ];
 

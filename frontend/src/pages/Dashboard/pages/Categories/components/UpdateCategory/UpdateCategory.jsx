@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 import 'react-quill/dist/quill.snow.css';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import AxiosInstance from '../../../../../../Authentication/AxiosInstance';
 import Config from '../../../../../../components/config';
 import DasHeader from '../../../../components/DasHeader/DasHeader';
 import Sidebar from '../../../../components/Sidebar/Sidebar';
@@ -26,7 +27,7 @@ const UpdateCategory = () => {
     useEffect(() => {
         const fetchCategory = async () => {
             try {
-                const response = await axios.get(`${Config.baseURL}/api/products/categories_dash/${id}/`);
+                const response = await AxiosInstance.get(`${Config.baseURL}/api/products/categories_dash/${id}/`);
                 const { name, description, image } = response.data;
 
                 setData({ name, description, image: null }); // Image needs to be reuploaded for updates

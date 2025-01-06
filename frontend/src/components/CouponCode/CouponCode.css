@@ -1,16 +1,12 @@
 .coupon-container {
-    /* background-color: #ffffff; */
-    background-color: #f4e6d7;
-    /* Light beige background */
 
+    background-color: #f4e6d7;
     width: 350px;
     text-align: center;
     padding: 20px;
     margin: 20px auto;
     font-family: Arial, sans-serif;
-    /* color: #333; */
     color: #fff;
-
     border: 2px dashed rgb(0, 0, 0);
     border-radius: 8px;
 
@@ -44,6 +40,5 @@
 .coupon-valid {
     font-size: 0.9rem;
     margin-top: 10px;
-    /* color: #888; */
     color: #ffffff;
 }

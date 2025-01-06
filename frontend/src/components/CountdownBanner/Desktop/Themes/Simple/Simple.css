@@ -14,14 +14,13 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     color: #212121;
     font-family: "Arial", sans-serif;
-    /* max-width: 1200px; */
     margin: 0 auto;
     gap: 20px;
     flex-wrap: wrap;
-    /* Enable wrapping for smaller screens */
+
 }
 
-/* Offer Text */
+
 .banner-text {
     text-align: left;
     flex: 1;
@@ -52,7 +51,7 @@
     background-color: #0c1a3d;
 }
 
-/* Countdown Timer */
+
 .countdown-timer {
     display: flex;
     justify-content: center;
@@ -60,7 +59,7 @@
     gap: 10px;
     flex: 1;
     flex-wrap: wrap;
-    /* Allow wrapping on smaller screens */
+
 }
 
 .time-box {
@@ -79,7 +78,7 @@
     color: #757575;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .countdown-banner {
         flex-direction: column;

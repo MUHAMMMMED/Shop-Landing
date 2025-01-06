@@ -157,7 +157,15 @@ header {
     background-color: #fff;
 }
 
-/* شريط التنقل العلوي */
+
+
+
+
+/////////////////////////////////////////////////////
+
+
+
+/* شريط التنقل العلوي  
 .top-bar {
     background-color: #232f3e;
     color: #fff;
@@ -178,7 +186,7 @@ header {
     text-decoration: underline;
 }
 
-/* الهيدر الرئيسي */
+ 
 .header-main {
     display: flex;
     justify-content: space-between;
@@ -187,16 +195,16 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* الشعار */
+ 
 .logo h1 {
     font-size: 30px;
     font-weight: bold;
     color: #ff6a00;
-    /* لون الشعار */
+ 
     margin: 0;
 }
 
-/* قائمة التنقل */
+ 
 .nav-links ul {
     list-style: none;
     display: flex;
@@ -215,10 +223,10 @@ header {
 
 .nav-links ul li a:hover {
     color: #ff6a00;
-    /* لون التمرير */
+ 
 }
 
-/* القائمة المنسدلة */
+ 
 .dropdown {
     position: relative;
 }
@@ -248,13 +256,12 @@ header {
 .dropdown-menu li a:hover {
     background-color: #f5f5f5;
 }
-
-/* إظهار القائمة المنسدلة */
+ 
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 
-/* شريط البحث */
+ 
 .search-bar {
     display: flex;
     background-color: #f1f1f1;
@@ -280,7 +287,7 @@ header {
     cursor: pointer;
 }
 
-/* أيقونات المستخدم وسلة التسوق */
+ 
 .header-icons button {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -294,7 +301,7 @@ header {
     background-color: #ff6a00;
 }
 
-/* أيقونة القائمة الجانبية */
+ 
 .menu-icon {
     display: none;
 }
@@ -727,9 +734,9 @@ header {
 } */
 
 
-
-
-/* Header Styles */
+/* ?????? */
+/* 
+ 
 .header {
     font-family: "Arial", sans-serif;
     background-color: #ffc107;
@@ -833,7 +840,7 @@ header {
     cursor: pointer;
 }
 
-/* Responsive Design */
+ 
 @media (max-width: 768px) {
     .header-bottom {
         flex-direction: column;
@@ -847,4 +854,4 @@ header {
     .header-nav {
         display: none;
     }
-}
+} */

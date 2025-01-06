@@ -35,7 +35,7 @@ const CartPage = () => {
       fetchCart(); // Fetch cart data only if it hasn't been loaded yet
     }
   }, [cart]);
-  const language = 'en'
+  const language = 'ar'
   return (
     <>
       {/* {loading && <p>جاري تحميل البيانات...</p>}  

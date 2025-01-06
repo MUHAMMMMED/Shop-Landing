@@ -1,7 +1,7 @@
 from django.db import models
 import uuid   
 from products.models import  *
-from visitors.models import Campaign,Source,Medium
+from visitors.models import *
  
 class Page(models.Model):
     title = models.CharField(max_length=200)
@@ -39,8 +39,6 @@ class Section(models.Model):
     def __str__(self):
         return self.title
       
-
-
 class Style(models.Model):
     primary_color = models.CharField(max_length=7, default="#3498db")
     secondary_color = models.CharField(max_length=7, default="#2ecc71")
@@ -87,9 +85,16 @@ class Header(models.Model):
 class ImageSlider(models.Model):
     image = models.FileField(upload_to="files/images_Slider/%Y/%m/%d/", blank=True, null=True)
     def delete(self, *args, **kwargs):
-        self.image.delete()
+        # حذف الملف الفعلي عند حذف الكائن
+        if self.image:
+            self.image.delete(save=False)
         super().delete(*args, **kwargs)
- 
+
+    def __str__(self):
+        return f"Image {self.id}"
+
+
+
 class Slider(models.Model):
     Themes_TYPES = (
         ('classic', 'Classic'),
@@ -103,8 +108,15 @@ class Slider(models.Model):
     is_mobile = models.BooleanField(default=True)
     is_tablet = models.BooleanField(default=True)
     is_desktop = models.BooleanField(default=True)
-    images = models.ManyToManyField(ImageSlider)
+    images = models.ManyToManyField(ImageSlider, related_name="sliders")
+
     # style = models.ForeignKey(Style, related_name='slider', on_delete=models.CASCADE, blank=True, null=True)
+    def __str__(self):
+        return f"Slider {self.id} - Desktop: {self.themes_desktop_Types}, Tablet: {self.themes_tablet_Types}, Mobile: {self.themes_mobile_Types}"
+
+
+
+ 
 
 
 class ImageHight(models.Model):
@@ -160,13 +172,32 @@ class VideoPlayer(models.Model):
     def __str__(self):
         return self.link
   
+
+
 class ContentFeatures(models.Model):
-    image = models.ImageField(upload_to="files/Features/images/%Y/%m/%d/" )
+    image = models.ImageField(upload_to="files/Features/images/%Y/%m/%d/"  )
     title = models.TextField()
     description= models.TextField()
     def __str__(self):
       return self.title
-    
+
+
+class FeaturesCard(models.Model):
+    Themes_TYPES = (
+        ('classic', 'Classic'),
+        ('simple', 'Simple'),
+        ('modern', 'Modern'),
+     )
+    themes_desktop_Types = models.CharField(max_length=20, choices=Themes_TYPES , default="Classic")
+    themes_tablet_Types = models.CharField(max_length=20, choices=Themes_TYPES , default="Classic")
+    themes_mobile_Types = models.CharField(max_length=20, choices=Themes_TYPES , default="Classic")
+    is_mobile = models.BooleanField(default=True)
+    is_tablet = models.BooleanField(default=True)
+    is_desktop = models.BooleanField(default=True)
+    content= models.ManyToManyField(ContentFeatures, related_name='features_card')
+    def __str__(self):
+        return ", ".join([content.title for content in self.content.all()[:3]]) or "No Content"
+   
 
 class Card(models.Model):
     Themes_TYPES = (
@@ -186,21 +217,6 @@ class Card(models.Model):
         return ", ".join([content.title for content in self.content.all()[:3]]) or "No Content"
 
  
-class FeaturesCard(models.Model):
-    Themes_TYPES = (
-        ('classic', 'Classic'),
-        ('simple', 'Simple'),
-        ('modern', 'Modern'),
-     )
-    themes_desktop_Types = models.CharField(max_length=20, choices=Themes_TYPES , default="Classic")
-    themes_tablet_Types = models.CharField(max_length=20, choices=Themes_TYPES , default="Classic")
-    themes_mobile_Types = models.CharField(max_length=20, choices=Themes_TYPES , default="Classic")
-    is_mobile = models.BooleanField(default=True)
-    is_tablet = models.BooleanField(default=True)
-    is_desktop = models.BooleanField(default=True)
-    content= models.ManyToManyField(ContentFeatures, related_name='features_card')
-    def __str__(self):
-        return ", ".join([content.title for content in self.content.all()[:3]]) or "No Content"
 
   
 class Features(models.Model):
