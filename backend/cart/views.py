@@ -102,7 +102,7 @@ class CartDetailView(APIView):
     print('CartDetailView' )
     def get(self, request, *args, **kwargs):
         session_id = request.session.session_key
-    
+
         # Fetch the cart based on the session ID
         cart = get_object_or_404(Cart, session_id=session_id)
 
