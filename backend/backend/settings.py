@@ -88,7 +88,7 @@ DOMAIN =   'https://smartcardnfc.com'
   
   
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Using database-backed sessions
-# SESSION_COOKIE_NAME = 'sessionid'
+SESSION_COOKIE_NAME = 'sessionid'
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 365  
 SESSION_SAVE_EVERY_REQUEST = True  # Save the session to the database on every request
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False
