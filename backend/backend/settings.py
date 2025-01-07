@@ -81,12 +81,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.User'
  
- 
- 
+DOMAIN =   'https://smartcardnfc.com'
 
  
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'  
 
+  
   
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Using database-backed sessions
 # SESSION_COOKIE_NAME = 'sessionid'
@@ -105,11 +104,6 @@ CORS_ALLOWED_ORIGINS = [
 CSRF_TRUSTED_ORIGINS = [
     'https://smartcardnfc.com',  
 ]
-
-
-
-
-
 
 
 
@@ -171,7 +165,18 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
-  
+ 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 1365  
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False   
+
+
+
+
+
+
+
+
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Africa/Cairo'
