@@ -153,12 +153,12 @@ SESSION_COOKIE_SECURE = False  # Set to True in production
 CORS_ALLOW_CREDENTIALS = True  # السماح بإرسال الكوكيز عبر CORS
 CORS_ALLOWED_ORIGINS = [
     'https://smartcardnfc.com',  
-    # 'http://localhost:3000'
+ 
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://smartcardnfc.com',
-    # 'http://localhost:3000'  
+ 
 ]
 
 DOMAIN = 'https://smartcardnfc.com'
