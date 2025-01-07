@@ -87,20 +87,15 @@ AUTH_USER_MODEL = 'accounts.User'
  
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  
 
- 
+  
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Using database-backed sessions
+# SESSION_COOKIE_NAME = 'sessionid'
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 365  
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False   
-
-# استخدام ملفات الكوكيز بشكل آمن مع HTTPS
-SESSION_COOKIE_SECURE = True  # تأكد من إرسال الكوكيز عبر HTTPS فقط
-SESSION_COOKIE_HTTPONLY = True  # التأكد من أن الكوكيز غير قابلة للوصول من خلال JavaScript
-SESSION_COOKIE_SAMESITE = 'Lax'  # تحديد سياسة الكوكيز "SameSite" لتقييد إرسال الكوكيز في سياقات معينة
-
-# تفعيل CSRF
-CSRF_COOKIE_SECURE = True  # إرسال CSRF فقط عبر HTTPS
-CSRF_COOKIE_HTTPONLY = True  # التأكد من أن الكوكيز غير قابلة للوصول من JavaScript
-CSRF_COOKIE_SAMESITE = 'Lax'  # سياسة SameSite للكوكيز
-
+SESSION_SAVE_EVERY_REQUEST = True  # Save the session to the database on every request
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_COOKIE_SAMESITE = None
+SESSION_COOKIE_SECURE = False  # Set to True in production
+ 
 # CORS - السماح للأصول الموثوقة
 CORS_ALLOW_CREDENTIALS = True  # السماح بإرسال الكوكيز عبر CORS
 CORS_ALLOWED_ORIGINS = [
