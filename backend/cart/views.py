@@ -17,7 +17,8 @@ class AddToCartView(APIView):
         product_id = request.data.get('productId')
         quantity = request.data.get('quantity', 1)  # Default quantity is 1 if not provided
         notes = request.data.get('notes', [])  # Notes are optional
-        session_id = request.session.session_key
+        # session_id = request.session.session_key
+        session_id = '555'
         print('session_id',session_id)
         # Check if there is an existing session
         if request.session.session_key:
@@ -101,7 +102,8 @@ class AddToCartView(APIView):
 class CartDetailView(APIView):
     print('CartDetailView' )
     def get(self, request, *args, **kwargs):
-        session_id = request.session.session_key
+        # session_id = request.session.session_key
+        session_id = '555'
         print('session_id',session_id)
         # Fetch the cart based on the session ID
         cart = get_object_or_404(Cart, session_id=session_id)
