@@ -81,33 +81,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.User'
  
-DOMAIN =   'https://smartcardnfc.com'
-
- 
-
-  
-  
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Using database-backed sessions
-SESSION_COOKIE_NAME = 'sessionid'
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 365  
-SESSION_SAVE_EVERY_REQUEST = True  # Save the session to the database on every request
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False
-SESSION_COOKIE_SAMESITE = None
-SESSION_COOKIE_SECURE = False  # Set to True in production
- 
-# CORS - السماح للأصول الموثوقة
-CORS_ALLOW_CREDENTIALS = True  # السماح بإرسال الكوكيز عبر CORS
-CORS_ALLOWED_ORIGINS = [
-    'https://smartcardnfc.com',  
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://smartcardnfc.com',  
-]
-
-
-
-
 # Using PostgreSQL
 
 POSTGRES_USER = config('POSTGRES_USER', cast=str)
@@ -165,11 +138,31 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+  
  
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 1365  
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False   
+  
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Using database-backed sessions
+SESSION_COOKIE_NAME = 'sessionid'
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 365  
+SESSION_SAVE_EVERY_REQUEST = True  # Save the session to the database on every request
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_COOKIE_SAMESITE = None
+SESSION_COOKIE_SECURE = False  # Set to True in production
+ 
+# CORS - السماح للأصول الموثوقة
+CORS_ALLOW_CREDENTIALS = True  # السماح بإرسال الكوكيز عبر CORS
+CORS_ALLOWED_ORIGINS = [
+    'https://smartcardnfc.com',  
+    # 'http://localhost:3000'
+]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://smartcardnfc.com',
+    # 'http://localhost:3000'  
+]
+
+DOMAIN = 'https://smartcardnfc.com'
+# DOMAIN = 'http://localhost:3000'
 
 
 
