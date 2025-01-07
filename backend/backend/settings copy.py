@@ -19,12 +19,7 @@ DEBUG = config('DEBUG', cast=bool, default=False)
 # Hosts allowed to access this Django application
 ALLOWED_HOSTS = ['*']  # Note: Change this in production to a more restrictive list
 
-# ALLOWED_HOSTS = [
-#     'smartcardnfc.com',  # النطاق الرئيسي
-#     'www.smartcardnfc.com',  # النطاق الفرعي
-   
-# ]
-
+  
 
 # Application definition
 INSTALLED_APPS = [
@@ -39,15 +34,18 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework_simplejwt.token_blacklist',
     'django_cleanup.apps.CleanupConfig',
-    # Apps
+    
+    #Apps
     'accounts',
     'content',
     'visitors',
     'products',
     'cart',
     'orders',
+    
 ]
 
+ 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -57,14 +55,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
+ 
 
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,13 +75,14 @@ TEMPLATES = [
             ],
         },
     },
-]
+] 
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 AUTH_USER_MODEL = 'accounts.User'
-
+ 
 # Using PostgreSQL
+
 POSTGRES_USER = config('POSTGRES_USER', cast=str)
 POSTGRES_PASSWORD = config('POSTGRES_PASSWORD', cast=str)
 POSTGRES_DB = config('POSTGRES_DB', cast=str)
@@ -99,6 +100,10 @@ if all([POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB]):
         }
     }
 
+
+
+
+
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -115,59 +120,120 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
 # JWT settings
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=170),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'AUTH_HEADER_TYPES': ('Bearer',),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=170),  # Access token lifetime
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),     # Refresh token lifetime
+    'AUTH_HEADER_TYPES': ('Bearer',),                # Token type used in Authorization header
 }
 
+
+
 REST_FRAMEWORK = {
-    'NON_FIELD_ERRORS_KEY': 'error',
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'NON_FIELD_ERRORS_KEY':'error',
+        'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
-
+  
+ 
+  
+ 
 # إعدادات الجلسات
-SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # استخدام قاعدة البيانات لتخزين الجلسات
 SESSION_COOKIE_NAME = 'sessionid'
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 365
-SESSION_SAVE_EVERY_REQUEST = True
-SESSION_EXPIRE_AT_BROWSER_CLOSE = False
- 
-SESSION_COOKIE_SECURE = False # dev
-SESSION_COOKIE_SAMESITE = 'Lax' # dev
-
-SESSION_COOKIE_SECURE = True  # prod
-SESSION_COOKIE_SAMESITE = 'None'  # prod
-
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 365  # عمر الكوكي
+SESSION_SAVE_EVERY_REQUEST = True  # حفظ الجلسة في كل طلب
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # عدم إنهاء الجلسة عند إغلاق المتصفح
+SESSION_COOKIE_SAMESITE = 'None'  # السماح بإرسال الكوكيز عبر CORS
+# SESSION_COOKIE_SECURE = True  # استخدام الكوكيز فقط عبر HTTPS (تأكد من استخدام HTTPS في الإنتاج)
+SESSION_COOKIE_SECURE = False  # للتطوير المحلي
  
 
 
-# CORS settings
-CORS_ALLOW_CREDENTIALS = True
+
+# CORS - السماح للأصول الموثوقة
+CORS_ALLOW_CREDENTIALS = True  # السماح بإرسال الكوكيز عبر CORS
 CORS_ALLOWED_ORIGINS = [
-    'https://smartcardnfc.com',
+ 'http://localhost:3000' 
+ 
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://smartcardnfc.com',
+  
+    'http://localhost:3000'
+ 
 ]
-# DOMAIN = 'http://localhost:3000'# dev
-DOMAIN = 'https://smartcardnfc.com' # prod
 
-# Static and media files
+# DOMAIN = 'https://smartcardnfc.com'
+DOMAIN = 'http://localhost:3000'
+
+
+
+
+
+
+
+
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'Africa/Cairo'
+USE_I18N = True
+USE_TZ = True
+ 
+# Static files (CSS, JavaScript, Images)
+ 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/app/static/'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/app/media/'
 
 # Stripe settings
 STRIPE_SECRET_KEY = os.getenv('STRIPE_API_KEY')
-STRIPE_WEBHOOK_SECRET = os.getenv('STRIPE_WEBHOOK_SECRET')
+STRIPE_WEBHOOK_SECRET =os.getenv('STRIPE_WEBHOOK_SECRET')  
 
-# Other settings
+# Other settings... 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
- 
+
+
+
+  
+import os
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs/django.log'),
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
+# Ensure logs directory exists
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
+os.makedirs(LOG_DIR, exist_ok=True)
