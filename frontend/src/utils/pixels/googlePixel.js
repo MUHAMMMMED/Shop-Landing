@@ -1,6 +1,5 @@
- 
 export const trackGooglePixel = (event, data = {}) => {
-    if (window.gtag) {
-      gtag('event', event, data);
-    }
-  };
+  if (typeof window !== "undefined" && window.gtag) {
+    window.gtag("event", event, data);
+  }
+};

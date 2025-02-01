@@ -1,6 +1,5 @@
-
 export const trackFacebookPixel = (event, data = {}) => {
-    if (window.fbq) {
-      fbq('track', event, data);
-    }
-  };
+  if (typeof window !== "undefined" && window.fbq) {
+    window.fbq("track", event, data);
+  }
+};
