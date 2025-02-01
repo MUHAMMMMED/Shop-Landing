@@ -10,8 +10,8 @@ COPY package*.json ./
 # Clean npm cache before installing dependencies and install dependencies
 RUN npm cache clean --force && npm install
 # Increase memory allocation (adjust as needed)
-ENV NODE_OPTIONS=--max_old_space_size=8192
 
+ENV NODE_OPTIONS="--max_old_space_size=8192"
 # Add missing babel plugin for compatibility issues
 RUN npm install --save-dev @babel/plugin-proposal-private-property-in-object
 
