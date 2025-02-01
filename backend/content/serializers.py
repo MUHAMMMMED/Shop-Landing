@@ -384,8 +384,8 @@ class Settings_Serializer(serializers.ModelSerializer):
 
 
  
-class PixelSettingsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = PixelSettings
-        fields = '__all__'
+# class PixelSettingsSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = PixelSettings
+#         fields = '__all__'
 
