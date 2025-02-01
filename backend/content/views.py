@@ -8,7 +8,9 @@ from django.db.models import Q
 from rest_framework.permissions import IsAuthenticated
 from .utils import *
 from django.conf import settings  
- 
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import os
 
 class SettingView(APIView):
     def get(self, request):
@@ -16,16 +18,14 @@ class SettingView(APIView):
       serializer = Settings_Serializer(settings)
       return Response(serializer.data)
 
-class PixelSettingsViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticated]
-    queryset = PixelSettings.objects.all()
-    serializer_class = PixelSettingsSerializer
+# class PixelSettingsViewSet(viewsets.ModelViewSet):
+#     permission_classes = [IsAuthenticated]
+#     queryset = PixelSettings.objects.all()
+#     serializer_class = PixelSettingsSerializer
 
 
 
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-import os
+
 
 @csrf_exempt
 def update_env(request):
