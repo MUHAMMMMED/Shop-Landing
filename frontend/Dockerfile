@@ -19,6 +19,12 @@ RUN npm install --save-dev @babel/plugin-proposal-private-property-in-object
 # Copy the rest of the project files
 COPY . .
 
+# # Copy the .env file from the shared volume
+# COPY /app/shared_env/.env .env
+
+
+# # Copy the .env file to the correct location
+# COPY frontend/src/components/PixelsLibraries/.env .env
 # Build the React app
 RUN npm run build --verbose
 

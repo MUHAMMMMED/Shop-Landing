@@ -4,12 +4,15 @@ import React, { useEffect, useState } from 'react';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import Config from '../../../../components/config';
+import { trackFacebookPixel } from '../../../../utils/pixels/facebookPixel';
+import { trackGooglePixel } from '../../../../utils/pixels/googlePixel';
+import { trackSnapchatPixel } from '../../../../utils/pixels/snapchatPixel';
+import { trackTikTokPixel } from '../../../../utils/pixels/tiktokPixel';
 import CartItem from '../CartItem/CartItem';
 import Invoice from '../Invoice/Invoice';
 import InvoiceDetails from '../InvoiceDetails/InvoiceDetails';
 import './ContactForm.css';
 import './PhoneNumberForm.css';
-
 const ContactForm = ({ cart, fetchCart, language }) => {
 
   const [shippingCountries, setShippingCountries] = useState([]);
@@ -134,6 +137,24 @@ const ContactForm = ({ cart, fetchCart, language }) => {
     setErrors(formErrors);
     return Object.keys(formErrors).length === 0; // Returns true if no errors
   };
+
+ 
+
+  cart.cart_items.forEach((item) => {
+    const product = item.product;
+    if (product) {
+    
+      const finalPrice = item.discount_price
+        ? item.discount_price
+        : item.product.price;
+  
+      trackFacebookPixel('AddToCart', { content_name: product.name, value: parseFloat(finalPrice).toFixed(2) });
+      trackGooglePixel('add_to_cart', { items: [{ id: product.id, name: product.name, price: parseFloat(finalPrice).toFixed(2) }] });
+      trackTikTokPixel('AddToCart', { content_name: product.name, value: parseFloat(finalPrice).toFixed(2) });
+      trackSnapchatPixel('ADD_TO_CART', { content_name: product.name, value: parseFloat(finalPrice).toFixed(2) });
+    }
+  });
+
 
   return (
     <>
@@ -405,7 +426,7 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                         </div>
                         <div>
                           <img
-                            src={`${Config.baseURL}${company?.image}`}
+                            src={`${Config.baseURL}/${company?.image}`}
                             height="35"
                             className="Delivery-option-icon"
                             alt="Delivery Option Icon"

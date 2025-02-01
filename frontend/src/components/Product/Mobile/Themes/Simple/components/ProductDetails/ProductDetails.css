@@ -171,33 +171,52 @@
 }
 
 .Mobile-quantity-selector {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
+  width: 100%;
   margin: 10px auto;
   padding: 0px;
   border-radius: 5px;
-
+  
+ 
 }
 
-.Mobile-quantity-but {
+ 
+.Mobile-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:  0px;
+  width: 100%;
+}
+
+.Mobile-quantity-button,
+.Mobile-quantity-value {
+  display: inline-block;  
+  text-align: center;  
+}
+
+.Mobile-quantity-but{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  background-color: #9081f6;
   border: 2px solid #9081f6;
   border-radius: 5px;
-  background-color: #9081f6;
+  padding: 1px;
 }
+ 
 
 .Mobile-quantity-button {
   background-color: #9081f6;
   border: 2px solid #9081f6;
   color: white;
   border: none;
-  /* border-radius: 5%; */
   width: 100px;
   height: 40px;
   font-size: 30px;
   cursor: pointer;
   transition: background-color 0.3s;
+  display: block;
 }
 
 .Mobile-quantity-button:hover {
@@ -206,11 +225,23 @@
 
 .Mobile-quantity-value {
   background-color: #9081f6;
-  border: 2px solid #9081f6;
-  margin: 0 20px;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  margin: 0  5px;
   font-size: 20px;
   font-weight: bold;
-  color: #fff;
+  color: #fff!important;
+  display: block;
+  width: 50px;
+ 
+}
+ 
+
+.Mobile-notes-section{
+
+width: 100%;
+float: left;
+
 }
 
 .Mobile-button {
@@ -288,8 +319,7 @@
 .note-input::placeholder {
   color: #aaa;  
 } */
-
-
+ 
 .Mobile-quantity-selector {
   display: flex;
   align-items: center;
@@ -297,10 +327,14 @@
   margin-top: 10px;
 }
 
-.quantity-title {
+.Mobile-quantity-title {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 5px;
+  text-align: center;
+  float: left;
+  width: 100%;
+ 
 }
 
 .Mobile-quantity-button {
@@ -310,7 +344,7 @@
 }
 
 
-.note-textarea {
+.Mobile-note-textarea{
   width: 100%;
   height: 80px;
   margin-top: 10px;

@@ -14,6 +14,7 @@ import ShippingZones from "../ShippingZones/ShippingZones";
 import StoreDetails from "../StoreDetails/StoreDetails";
 
 
+import PixelSettingsForm from "../../../../../../components/PixelsLibraries/PixelSettingsForm/PixelSettingsForm";
 import "./Sidebar.css";
 
 const SettingsSidebar = ({ language = "en" }) => {
@@ -41,6 +42,13 @@ const SettingsSidebar = ({ language = "en" }) => {
             icon: <RiCoupon3Fill />,
             component: <Coupon />,
         },
+
+        {
+            name: language === "ar" ? "Pixel" : "Pixels",
+            icon: <RiCoupon3Fill />,
+            component: <PixelSettingsForm />,
+        },
+
 
         {/* {
         //     name: language === "ar" ? "المواقع" : "Locations",

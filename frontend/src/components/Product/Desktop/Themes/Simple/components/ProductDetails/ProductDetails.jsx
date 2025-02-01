@@ -31,8 +31,8 @@ export default function ProductDetails({ data, language, fetchData }) {
 
     try {
       // If notes are not required (i.e., the notes section is hidden), use an empty array for notes
-      const notesToSubmit = data?.is_active_note ? notes : [];
-
+      // const notesToSubmit = data?.is_active_note ? notes : [];
+      const notesToSubmit = data?.is_active_note ? notes.filter(note => note.trim() !== "") : [];
       // Send the request to add the product to the cart
       await axios.post('/cart/add/', { productId, quantity, notes: notesToSubmit }, { withCredentials: true });
 
@@ -120,7 +120,6 @@ export default function ProductDetails({ data, language, fetchData }) {
         <SpecialOffer coupon={data?.coupon} language={language} />}
       {!isAddedToCart && (
 
-
         <div className={`Desktop-quantity ${language === 'ar' ? 'rtl' : 'ltr'}`}>
           <>
             {/* Quantity Control */}
@@ -129,7 +128,6 @@ export default function ProductDetails({ data, language, fetchData }) {
                 {language === "ar" ? "الكمية" : "Quantity"}
 
               </h3>
-
               <div className="Desktop-quantity-but">
                 <button className="Desktop-quantity-button" onClick={decreaseQuantity}>
                   -
@@ -140,7 +138,7 @@ export default function ProductDetails({ data, language, fetchData }) {
                 </button>
               </div>
             </div>
-            <div style={{ width: "100%", float: "left" }} />
+
             {data?.is_active_note === true && (
               <>
                 <div className="Desktop-notes-section">

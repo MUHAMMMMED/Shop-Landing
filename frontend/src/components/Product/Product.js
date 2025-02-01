@@ -1,6 +1,11 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import CartPage from '../../pages/CartPage/CartPage';
+import { trackFacebookPixel } from '../../utils/pixels/facebookPixel';
+import { trackGooglePixel } from '../../utils/pixels/googlePixel';
+import { trackSnapchatPixel } from '../../utils/pixels/snapchatPixel';
+import { trackTikTokPixel } from '../../utils/pixels/tiktokPixel';
+import FloatButton from '../FloatButton/FloatButton';
 import DesktopThemesTypes from './Desktop/Themes/DesktopThemesTypes';
 import MobileThemesTypes from './Mobile/Themes/MobileThemesTypes';
 import TabletThemesTypes from './Tablet/Themes/TabletThemesTypes';
@@ -27,13 +32,27 @@ export default function Product({ data, device_Types, language, fetchData }) {
     }
   };
 
+  useEffect(() => {
+    if (data?.product?.id && data?.product?.name && data?.product?.price) {
+      const productData = {
+        product_id: data?.product.id,
+        name: data?.product.name,
+        price: data?.product?.price,
+      };
+  
+      trackFacebookPixel('ViewContent', productData);
+      trackGooglePixel('view_item', productData);
+      trackTikTokPixel('ViewContent', productData);
+      trackSnapchatPixel('VIEW_CONTENT', productData);
+    }
+  }, [data?.product.id, data?.product.name, data?.product?.price]);
+
   return (
     <>
 
       {renderThemes()}
-
       {renderCart()}
-
+      <FloatButton   />
     </>
   );
 }

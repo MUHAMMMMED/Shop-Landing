@@ -202,68 +202,55 @@ class FeaturesCardSerializer(serializers.ModelSerializer):
         return features_card
 
  
+# class ContentFeaturesSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = ContentFeatures
+#         fields = ['id', 'title', 'description', 'image']
+ 
+
+
+
+# class CardSerializer(serializers.ModelSerializer):
+#     content = ContentFeaturesSerializer(many=True)
+
+#     class Meta:
+#         model = Card
+#         fields = '__all__'
+
+#     def create(self, validated_data):
+#         # Extract content from the validated data
+#         content_data = validated_data.pop('content')
+#         card = Card.objects.create(**validated_data)
+        
+#         # Create and add each ContentFeature instance to the Card
+#         for content_item in content_data:
+#             content_feature = ContentFeatures.objects.create(**content_item)
+#             card.content.add(content_feature)  # Associate ContentFeature with Card
+
+#         return card
+
+ 
 class ContentFeaturesSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContentFeatures
         fields = ['id', 'title', 'description', 'image']
 
-    def create(self, validated_data):
-        # Create a new ContentFeature instance from the validated data
-        return ContentFeatures.objects.create(**validated_data)
-
-    def update(self, instance, validated_data):
-        # Update the existing ContentFeature instance with new data
-        instance.title = validated_data.get('title', instance.title)
-        instance.description = validated_data.get('description', instance.description)
-        instance.image = validated_data.get('image', instance.image)
-        instance.save()
-        return instance
-
-
-
-
 class CardSerializer(serializers.ModelSerializer):
-    # Nested serializer to handle the Many-to-Many relation with ContentFeatures
     content = ContentFeaturesSerializer(many=True)
 
     class Meta:
-        model = Card
+        model = FeaturesCard
         fields = '__all__'
 
     def create(self, validated_data):
-        # Extract content from the validated data
         content_data = validated_data.pop('content')
-        card = Card.objects.create(**validated_data)
+        card = FeaturesCard.objects.create(**validated_data)
         
-        # Create and add each ContentFeature instance to the Card
         for content_item in content_data:
             content_feature = ContentFeatures.objects.create(**content_item)
-            card.content.add(content_feature)  # Associate ContentFeature with Card
+            card.content.add(content_feature)
 
         return card
-
-    def update(self, instance, validated_data):
-        # Extract content from the validated data
-        content_data = validated_data.pop('content')
-        
-        # Update the Card instance
-        instance.themes_desktop_Types = validated_data.get('themes_desktop_Types', instance.themes_desktop_Types)
-        instance.themes_tablet_Types = validated_data.get('themes_tablet_Types', instance.themes_tablet_Types)
-        instance.themes_mobile_Types = validated_data.get('themes_mobile_Types', instance.themes_mobile_Types)
-        instance.is_mobile = validated_data.get('is_mobile', instance.is_mobile)
-        instance.is_tablet = validated_data.get('is_tablet', instance.is_tablet)
-        instance.is_desktop = validated_data.get('is_desktop', instance.is_desktop)
-        instance.save()
-
-        # Update the related ContentFeatures (remove existing ones and add new)
-        instance.content.clear()
-        for content_item in content_data:
-            content_feature = ContentFeatures.objects.create(**content_item)
-            instance.content.add(content_feature)  # Add updated ContentFeature to Card
-
-        return instance
- 
-
 
 class FeaturesSerializer(serializers.ModelSerializer):
     content = ContentFeaturesSerializer(many=True) 
@@ -395,4 +382,10 @@ class Settings_Serializer(serializers.ModelSerializer):
         model = Settings
         fields = '__all__'
 
-   
+
+ 
+class PixelSettingsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PixelSettings
+        fields = '__all__'
+

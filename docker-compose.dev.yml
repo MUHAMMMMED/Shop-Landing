@@ -39,7 +39,13 @@ services:
       - backend
     env_file:
       - ./.env
-   
+    volumes:
+      - ./backend:/app
+      - static_backend:/app/static
+      - media_backend:/app/media
+      - shared_env:/app/shared_env  
+
+
 
   frontend:
     build:
@@ -49,6 +55,9 @@ services:
       - "3000:3000"
     depends_on:
       - backend
+    volumes:
+      - shared_env:/app/shared_env  
+
 
   nginx:
     image: nginx:alpine
@@ -66,3 +75,4 @@ volumes:
   postgres_data:
   static_backend:
   media_backend:
+  shared_env: 

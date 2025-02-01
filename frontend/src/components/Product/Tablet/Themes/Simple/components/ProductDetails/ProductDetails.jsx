@@ -31,8 +31,8 @@ export default function ProductDetails({ data, language, fetchData }) {
 
     try {
       // If notes are not required (i.e., the notes section is hidden), use an empty array for notes
-      const notesToSubmit = data?.is_active_note ? notes : [];
-
+      // const notesToSubmit = data?.is_active_note ? notes : [];
+      const notesToSubmit = data?.is_active_note ? notes.filter(note => note.trim() !== "") : [];
       // Send the request to add the product to the cart
       await axios.post('cart/add/', { productId, quantity, notes: notesToSubmit }, { withCredentials: true });
 

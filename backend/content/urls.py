@@ -24,12 +24,7 @@ router.register(r'card', CardViewSet,basename='card')
 router.register(r'features_card', FeaturesCardViewSet,basename='features_card')
 router.register(r'features', FeaturesViewSet,basename='features')
 router.register(r'product_grid',ProductGridViewSet,basename='product_grid')
-
-
-
-
-
- 
+router.register(r'pixel-settings', PixelSettingsViewSet)
 
  
 urlpatterns = [
@@ -41,18 +36,14 @@ urlpatterns = [
     path('add-module-to-page/', AddModuleToPage.as_view(), name='add-module-to-page'),
     path('settings/', SettingsView.as_view(), name='settings'),
     path('page-link/<int:pk>/', PageLinksView.as_view(), name='page-link'),
-
  
-    
+    path('update-env/', update_env, name='update_env'),
+ 
  
 ]
 
 # Include the router URLs
 urlpatterns += router.urls
-
-
-
-
 
 
 

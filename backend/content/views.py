@@ -16,6 +16,34 @@ class SettingView(APIView):
       serializer = Settings_Serializer(settings)
       return Response(serializer.data)
 
+class PixelSettingsViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = PixelSettings.objects.all()
+    serializer_class = PixelSettingsSerializer
+
+
+
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import os
+
+@csrf_exempt
+def update_env(request):
+    if request.method == 'POST':
+        env_content = request.POST.get('envContent', '')
+        env_path = os.path.join(os.path.dirname(__file__), '../../frontend/.env')  # المسار إلى ملف .env في React
+
+        try:
+            with open(env_path, 'w') as env_file:
+                env_file.write(env_content)
+            return JsonResponse({'status': 'success'})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)})
+
+    return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+
+
+
 
 
 class PageView(viewsets.ReadOnlyModelViewSet):

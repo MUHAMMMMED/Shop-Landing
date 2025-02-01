@@ -6,6 +6,13 @@ import RemoveItem from '../RemoveItem/RemoveItem';
 import Quantity from '../quantity/Quantity';
 
 const CartItem = ({ item, FetchCart, currency, language }) => {
+  const finalPrice = item.product.price > item.discount_price
+    ? item.discount_price
+    : item.product.price;
+
+  const totalPrice = parseFloat(finalPrice * item.quantity).toFixed(2);
+  const beforePrice = item.product.price * item.quantity;
+
   return (
     <div className="list-group-item" key={item.id}>
       <RemoveItem itemId={item.id} FetchCart={FetchCart} />
@@ -22,18 +29,14 @@ const CartItem = ({ item, FetchCart, currency, language }) => {
       <Quantity itemId={item.id} quantity={item.quantity} FetchCart={FetchCart} />
       <div className="cart-product-price">
         <div className="price">
-          {parseFloat(
-            item.product.price > item.discount_price
-              ? item.discount_price
-              : item.product.price
-          ).toFixed(2)}
+          {totalPrice}
           <span className="money_code">{currency}</span>
         </div>
 
         {/* Only show before-price if there's a discount */}
         {item?.product?.price > item?.discount_price && (
           <div className="before-price">
-            {parseFloat(item?.product?.price).toFixed(2)}
+            {parseFloat(beforePrice).toFixed(2)}
             <span className="money_code">{currency}</span>
           </div>
         )}
@@ -46,4 +49,4 @@ const CartItem = ({ item, FetchCart, currency, language }) => {
   );
 };
 
-export default CartItem
+export default CartItem;

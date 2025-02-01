@@ -1,22 +1,24 @@
 import axios from 'axios';
 import html2canvas from 'html2canvas';
 import React, { useEffect, useState } from 'react';
-// import { useNavigate, useParams } from 'react-router-dom';
-
+import { trackFacebookPixel } from '../../utils/pixels/facebookPixel';
+import { trackGooglePixel } from '../../utils/pixels/googlePixel';
+import { trackSnapchatPixel } from '../../utils/pixels/snapchatPixel';
+import { trackTikTokPixel } from '../../utils/pixels/tiktokPixel';
 import Loading from '../Loading/Loading';
 import './Success.css';
 import SuccessMessage from './components/SuccessMessage/SuccessMessage';
 import Tracking from './components/Tracking/Tracking';
-const Success = () => {
 
+const Success = () => {
     const [order, setOrder] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+ 
     useEffect(() => {
         const fetchOrder = async () => {
             try {
-
                 const response = await axios.get(`/orders/invoice/`, {
                     withCredentials: true,
                 });
@@ -32,17 +34,48 @@ const Success = () => {
         fetchOrder();
     }, []);
 
+    useEffect(() => {
+        if (!order) return;
+        
+        const checkoutData = {
+            transaction_id: order?.id,
+            affiliation: "SMART CARD NFC",
+            value: order?.total,
+            currency: "SAR",
+            items: order && order?.items.map(item => ({
+                item_id: item?.id,
+                item_name: item?.dictionary?.name,
+                price: item?.price,
+                quantity: item?.quantity,
+            })),
+        };
+     
+
+        trackFacebookPixel('Purchase', checkoutData);
+        trackGooglePixel('purchase', checkoutData);
+        trackTikTokPixel('CompletePayment', checkoutData);
+        trackSnapchatPixel('PURCHASE', checkoutData);
+    }, [order]);
+ 
+
+
+
+ 
     if (loading) return <Loading />;
-    if (error) return <h2 style={{
-        textAlign: 'center',
-        float: 'right', width: '100%',
-        marginTop: '20%', color: '#9081f6',
-        border: '1px solid #9081f6',
-        padding: '20px 20px'
-    }}> البيانات المطلوبة لم تعد متاحة </h2>;
+ 
+    if (error) return (
+        <h2 style={{
+            textAlign: 'center',
+            float: 'right', width: '100%',
+            marginTop: '20%', color: '#9081f6',
+            border: '1px solid #9081f6',
+            padding: '20px 20px'
+        }}>
+            البيانات المطلوبة لم تعد متاحة
+        </h2>
+    );
 
-
-
+ 
     const saveInvoiceAsImage = () => {
         const invoiceElement = document.querySelector('.invoice-container');
         html2canvas(invoiceElement).then(canvas => {
@@ -74,6 +107,7 @@ const Success = () => {
     const order_total = (order?.total - total_tax_shipping);
     const discount = (total - order_total);
 
+ 
     return (
         <>
             <SuccessMessage />

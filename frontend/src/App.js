@@ -8,6 +8,7 @@ import Login from './Authentication/Login/Login';
 // import VerifyEmail from './Authentication/VerifyEmail/VerifyEmail';
 import Success from './components/Success/Success';
 import './i18n';
+import CartPage from './pages/CartPage/CartPage';
 import DashboardMenu from './pages/Dashboard/components/DashboardMenu/DashboardMenu';
 import CategoriesList from './pages/Dashboard/pages/Categories/CategoriesList';
 import CreateCategory from './pages/Dashboard/pages/Categories/components/CreateCategory/CreateCategory';
@@ -52,6 +53,7 @@ const App = () => {
 
         <Route path="/" element={<Home />} />
         <Route path="/page/:slug/:id" element={<LandingPages />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/pages" element={<PagesList />} />
         <Route path="/success" element={<Success />} />
 
@@ -80,8 +82,6 @@ const App = () => {
         <Route path="/our-team" element={<OurTeam />} />
         <Route path="/modules/:page_id/:section_id/" element={<TabsModules />} />
         <Route path="/settings" element={<Settings />} />
-
-
 
         <Route path="/create-slider/:page_id/:section_id/" element={<CreateSlider />} />
         <Route path="/update-slider/:sliderId/:page_id/:section_id/" element={<UpdateSlider />} />
