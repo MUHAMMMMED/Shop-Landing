@@ -8,8 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Clean npm cache before installing dependencies and install dependencies
-# RUN npm cache clean --force && npm install
-RUN rm -rf node_modules package-lock.json && npm cache clean --force && npm install
+RUN npm cache clean --force && npm install
 # Increase memory allocation (adjust as needed)
 ENV NODE_OPTIONS=--max_old_space_size=8192
 
