@@ -165,30 +165,33 @@ const ContactForm = ({ cart, fetchCart, language }) => {
 
         <div className="ContactForm_container">
           <form className='ContactForm'>
+          <div className="grup-center">
             <h3 style={{ textAlign: 'center' }}>{language === 'ar' ? 'بيانات الشحن' : 'Shipping Information'} </h3>
-            <label htmlFor="fname" className={`ContactForm-label ${language === 'ar' ? 'rtl' : 'ltr'}`}>
+           
+            <label htmlFor="fname" className={`ContactForm-label ${language === 'ar' ? 'rtl' : 'ltr'}`} >
               <label htmlFor="fname" className={`ContactForm-label ${language === 'ar' ? 'rtl' : 'ltr'}`}>
                 {language === 'ar' ? (
                   <>
-                    <span>الاسم</span>  <span className="required-star">*</span>
+                    <span  className='required-text'>الاسم</span>  <span className="required-star">*</span>
                   </>
                 ) : (
                   <>
-                    <span>Name</span>   <span className="required-star">*</span>
+                    <span  className='required-text'>Name</span>   <span className="required-star">*</span>
                   </>
                 )}
               </label> </label>
 
-
+            
             <input
               type="text"
               id="fname"
               name="name"
               className="ContactForm-input-text"
-              style={{ width: '100%' }}
+              style={{ width: '100%' ,marginBottom:'15px'}}
               placeholder={language === 'ar' ? 'الاسم' : 'Name'}
               value={orderData.name}
               onChange={handleInputChange}
+              
             />
             {errors.name && <samp className="error">{errors.name}</samp>}
 
@@ -200,11 +203,11 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                   <div className={`ContactForm-label ${language === 'ar' ? 'rtl' : 'ltr'}`} style={{ paddingTop: '5px' }}>
                     {language === 'ar' ? (
                       <>
-                        <span> رقم الهاتف</span>  <span className="required-star">*</span>
+                        <span  className='required-text'> رقم الهاتف</span>  <span className="required-star">*</span>
                       </>
                     ) : (
                       <>
-                        <span>Phone Number</span> <span className="required-star">*</span>
+                        <span  className='required-text'>Phone Number</span> <span className="required-star">*</span>
                       </>
                     )}
 
@@ -231,11 +234,11 @@ const ContactForm = ({ cart, fetchCart, language }) => {
 
                     {language === 'ar' ? (
                       <>
-                        <span> الدولة</span>  <span className="required-star">*</span>
+                        <span  className='required-text'> الدولة</span>  <span className="required-star">*</span>
                       </>
                     ) : (
                       <>
-                        <span>Country</span>   <span className="required-star">*</span>
+                        <span className='required-text' >Country</span>   <span className="required-star">*</span>
                       </>
                     )}
 
@@ -307,11 +310,11 @@ const ContactForm = ({ cart, fetchCart, language }) => {
 
                     {language === 'ar' ? (
                       <>
-                        <span> المدينة</span>  <span className="required-star">*</span>
+                        <span className='required-text'> المدينة</span>  <span className="required-star">*</span>
                       </>
                     ) : (
                       <>
-                        <span>City</span>  <span className="required-star">*</span>
+                        <span  className='required-text'>City</span>  <span className="required-star">*</span>
                       </>
                     )}
 
@@ -337,11 +340,11 @@ const ContactForm = ({ cart, fetchCart, language }) => {
 
                     {language === 'ar' ? (
                       <>
-                        <span> الحي</span>  <span className="required-star">*</span>
+                        <span  className='required-text'> الحي</span>  <span className="required-star">*</span>
                       </>
                     ) : (
                       <>
-                        <span>Neighborhood</span> <span className="required-star">*</span>
+                        <span  className='required-text'>Neighborhood</span> <span className="required-star">*</span>
                       </>
                     )}
 
@@ -369,11 +372,11 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                   <div className={`ContactForm-label ${language === 'ar' ? 'rtl' : 'ltr'}`} style={{ paddingTop: '5px' }}>
                     {language === 'ar' ? (
                       <>
-                        <span>الشارع</span>  <span className="required-star">*</span>
+                        <span  className='required-text'>الشارع</span>  <span className="required-star">*</span>
                       </>
                     ) : (
                       <>
-                        <span>Street</span>  <span className="required-star">*</span>
+                        <span  className='required-text'>Street</span>  <span className="required-star">*</span>
                       </>
                     )}
 
@@ -439,7 +442,7 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                         <div className="DElivery-card-price">
                           {company?.shipping_price} {cart.currency}
                         </div>
-                      </div>
+                      </div>  
                     ))
                   ) : (
                     <></>
@@ -448,6 +451,7 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                 </div>
               </div>
             )}
+              </div>
           </form>
         </div>
       </div >

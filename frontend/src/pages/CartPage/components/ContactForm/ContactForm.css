@@ -14,7 +14,7 @@
   background-color: #fff;
   float: left;
 }
-
+.grup-center{width: 100%;}
 form h3 {
   margin-bottom: 20px;
   text-align: right;
@@ -170,8 +170,17 @@ textarea {
 .required-star {
   color: red;
   width: 30px;
-  padding: 5px;
+  padding: 8px;
+  display: block !important;
+  float: right;
+
 }
+.required-text{
+  display: block !important;
+  float: right;
+ 
+  }
+   
 
 .rtl .ContactForm-label {
   text-align: right;
@@ -200,12 +209,14 @@ textarea {
     float: left;
     border: 1px solid #ccc;
   }
-
+  .grup-center{width: 90%;margin-left: 5%;}
   .grup {
-    width: 100%;
+    width:100%;
     display: flex;
     flex-direction: column;
     background-color: transparent;
+    margin-left:0;
+   
   }
 
   .grup-row {
@@ -213,8 +224,9 @@ textarea {
     background-color: transparent;
     height: auto;
     margin-bottom: 15px; 
-  }
 
+  }
+  
   .ContactForm-input-text {
     padding: 15px !important;
     display: block !important;
@@ -222,8 +234,14 @@ textarea {
   }
 
   .SElect {
+    width: 100% !important;
     padding: 15px;
-    text-align: center;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    float: right;
+    text-align: right;
   }
 
   .react-tel-input .form-control {
@@ -264,5 +282,7 @@ textarea {
     width: auto; 
     padding: 0;  
     margin-left: 5px;  
+    display: block !important;
+    
   }
 }
