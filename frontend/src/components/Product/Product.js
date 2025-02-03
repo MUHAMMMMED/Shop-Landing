@@ -15,8 +15,9 @@ export default function Product({ data, device_Types, language, fetchData }) {
   const renderCart = () => {
     if (data?.product?.is_active_cart === true) {
       return <CartPage fetchData={fetchData} />;
+    } else {
+      return <FloatButton />;
     }
-    return null;
   };
 
   const renderThemes = () => {
@@ -52,7 +53,7 @@ export default function Product({ data, device_Types, language, fetchData }) {
 
       {renderThemes()}
       {renderCart()}
-      <FloatButton   />
+    
     </>
   );
 }

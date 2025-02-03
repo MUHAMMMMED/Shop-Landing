@@ -118,9 +118,9 @@ const ContactForm = ({ cart, fetchCart, language }) => {
     if (!orderData.country) {
       formErrors.country = language === 'ar' ? 'يرجى اختيار الدولة.' : 'Please select a country.';
     }
-    if (!orderData.governorate) {
-      formErrors.governorate = language === 'ar' ? 'يرجى إدخال المحافظة.' : 'Please enter the governorate.';
-    }
+    // if (!orderData.governorate) {
+    //   formErrors.governorate = language === 'ar' ? 'يرجى إدخال المحافظة.' : 'Please enter the governorate.';
+    // }
     if (!orderData.city) {
       formErrors.city = language === 'ar' ? 'يرجى إدخال المدينة.' : 'Please enter the city.';
     }
@@ -260,7 +260,7 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                     </option>
                     {shippingCountries.map((country) => (
                       <option key={country?.id} value={country?.id}>
-                        {country?.tax}
+                   
                         {country?.name}
                       </option>
                     ))}
@@ -271,7 +271,7 @@ const ContactForm = ({ cart, fetchCart, language }) => {
               </div> </div>
 
             <div className="grup">
-              <div className="grup-row">
+              {/* <div className="grup-row">
                 <label htmlFor="street" className={`ContactForm-label ${language === 'ar' ? 'rtl' : 'ltr'}`}>
                   <div className={`ContactForm-label ${language === 'ar' ? 'rtl' : 'ltr'}`} style={{ paddingTop: '5px' }}>
 
@@ -298,7 +298,7 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                 />
                 {errors.governorate && <samp className="error">{errors.governorate}</samp>}
 
-              </div>
+              </div> */}
 
 
               <div className="grup-row">
@@ -328,10 +328,9 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                 {errors.city && <samp className="error">{errors.city}</samp>}
 
 
-              </div> </div>
-
-
-            <div className="grup">
+              </div> 
+              
+              
               <div className="grup-row">
                 <label htmlFor="street" className={`ContactForm-label ${language === 'ar' ? 'rtl' : 'ltr'}`}>
                   <div className={`ContactForm-label ${language === 'ar' ? 'rtl' : 'ltr'}`} style={{ paddingTop: '5px' }}>
@@ -359,14 +358,18 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                 {errors.neighborhood && <samp className="error">{errors.neighborhood}</samp>}
 
               </div>
+ 
+              </div>
 
-              <div className="grup-row">
+
+            <div className="grup"  style={{width:'100%!important'}}>
+        
+              <div className="" style={{width:'100%',padding: "10px"}}>
                 <label htmlFor="street" className={`ContactForm-label ${language === 'ar' ? 'rtl' : 'ltr'}`}>
                   <div className={`ContactForm-label ${language === 'ar' ? 'rtl' : 'ltr'}`} style={{ paddingTop: '5px' }}>
-
                     {language === 'ar' ? (
                       <>
-                        <span> الحي</span>  <span className="required-star">*</span>
+                        <span>الشارع</span>  <span className="required-star">*</span>
                       </>
                     ) : (
                       <>
@@ -383,12 +386,11 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                   placeholder={language === 'ar' ? 'الشارع' : 'Street'}
                   value={orderData.street}
                   onChange={handleInputChange}
-                  style={{ width: '100%!important;' }}
-                />
-
+                  style={{ width: '100%!important;' }} />
                 {errors.street && <samp className="error">{errors.street}</samp>}
 
-              </div></div>
+              </div>
+              </div>
 
             {companies && (
               <div className="address-preview">
@@ -396,9 +398,7 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                   {language === 'ar' ? 'طريقة الشحن' : 'Shipping Method'}
                 </div>
                 <div className="Shipping-method">
-
                   {errors.Shipping && <samp className="error">{errors.Shipping}</samp>}
-
                   {companies && companies.length > 0 ? (
                     companies.map((company) => (
                       <div
@@ -445,12 +445,9 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                     <></>
                     // <p>No shipping companies available</p>
                   )}
-
-
                 </div>
               </div>
             )}
-
           </form>
         </div>
       </div >

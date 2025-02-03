@@ -11,7 +11,7 @@ const ShippingAddress = ({ order }) => {
                 {customer.street ? customer.street : 'Street information not provided'}
             </p>
             <p style={{ padding: '10px' }}>
-                {customer.city ? customer.city : 'City information not provided'}
+                {customer.neighborhood ? customer.neighborhood : 'neighborhood information not provided'}
             </p>
             <p style={{ padding: '10px' }}>
                 {customer.governorate || 'Governorate not provided'}
@@ -22,3 +22,4 @@ const ShippingAddress = ({ order }) => {
 };
 
 export default ShippingAddress;
+ 

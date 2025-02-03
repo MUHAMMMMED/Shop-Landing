@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from '../../../../../../../Authentication/axios';
 import SpecialOffer from '../../../../../../SpecialOffer/SpecialOffer';
 import './ProductDetails.css';
-
 axios.defaults.withCredentials = true;
 
 export default function ProductDetails({ data, language, fetchData }) {
+
+  const navigate = useNavigate();
   const productId = data?.id;
 
   const [quantity, setQuantity] = useState(data?.default_option === 0 ? 1 : data?.default_option);
@@ -44,9 +46,9 @@ export default function ProductDetails({ data, language, fetchData }) {
         setQuantity(1);
         setNotes([""]);
 
-        setTimeout(() => {
-          setScrollMessage(language === "ar" ? "استمر في التمرير لأسفل لإكمال المعلومات" : "Keep scrolling down to complete the information");
-        }, 1000);
+        // setTimeout(() => {
+        //   setScrollMessage(language === "ar" ? "استمر في التمرير لأسفل لإكمال المعلومات" : "Keep scrolling down to complete the information");
+        // }, 1000);
 
         setTimeout(fetchData, 3000);
       } else {
@@ -71,6 +73,10 @@ export default function ProductDetails({ data, language, fetchData }) {
   const price = parseFloat(data?.price) || 0;
   const discount = parseFloat(data?.discount) || 0;
   const priceDiscount = discount > 0 ? (price - (price * discount) / 100).toFixed(2) : price.toFixed(2);
+  const handleBuyNow = async () => {
+    await handleAddToCart ();
+    navigate('/cart');
+  };
 
   return (
     <div className="Mobile-product-details">
@@ -117,7 +123,7 @@ export default function ProductDetails({ data, language, fetchData }) {
           
           {data?.is_active_note && (
             <div className="Mobile-notes-section">
-              <h3 className="Mobile-notes-title" style={{ textAlign: 'center' }}>{data?.note_help || ''}</h3>
+              <h3 className="Mobile-notes-title" style={{ textAlign: 'center' }}>  {data?.note_help_top || ''}</h3>
               {notes.map((note, index) => (
                 <input
                   key={index}
@@ -134,9 +140,19 @@ export default function ProductDetails({ data, language, fetchData }) {
           {errorMessage && <div className="Desktop-error-message">{errorMessage}</div>}
 
           <div className="Mobile-button">
-            <button className="Sell-button-pay" onClick={handleAddToCart} disabled={isLoading}>
+            {/* <button className="Sell-button-pay" onClick={handleAddToCart} disabled={isLoading}>
               {isLoading ? (language === "ar" ? "جاري إضافة المنتج..." : "Adding product...") : (language === "ar" ? "اشتري الآن" : "Buy Now")}
-            </button>
+            </button> */}
+
+
+            <div >
+          <div className="Desktop-Sell-Row-name">
+            <button className='Desktop-Sell-button-btn' onClick={handleAddToCart}>إضافة للسلة</button>
+          </div>
+          <div className="Desktop-Sell-Row-price">
+            <button className='Desktop-Sell-button-pay' onClick={handleBuyNow}>اشتري الآن</button>
+          </div>
+        </div>
           </div>
      
         </> )}

@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from '../../../../../../../Authentication/axios';
 import SpecialOffer from '../../../../../../SpecialOffer/SpecialOffer';
 import './ProductDetails.css';
 axios.defaults.withCredentials = true;
+ 
+
 
 export default function ProductDetails({ data, language, fetchData }) {
+  const navigate = useNavigate();
   const productId = data?.id;
   // State for quantity, notes, success message, loading state, and added-to-cart status
   const [quantity, setQuantity] = useState(data?.default_option === 0 ? 1 : data?.default_option);
@@ -41,10 +45,10 @@ export default function ProductDetails({ data, language, fetchData }) {
       setNotes([""]);
       setSuccessMessage(language === "ar" ? "تمت إضافة المنتج إلى السلة" : "Product added to the cart");
       setIsAddedToCart(true);
-      setTimeout(() => {
-        setScrollMessage(language === "ar" ? "استمر في التمرير لأسفل لإكمال المعلومات" : "Keep scrolling down to complete the information");
+      // setTimeout(() => {
+      //   setScrollMessage(language === "ar" ? "استمر في التمرير لأسفل لإكمال المعلومات" : "Keep scrolling down to complete the information");
 
-      }, 1000);
+      // }, 1000);
       // Wait for 3 seconds before fetching the cart
       setTimeout(() => {
         fetchData();
@@ -86,6 +90,12 @@ export default function ProductDetails({ data, language, fetchData }) {
   const price = parseFloat(data?.price) || 0; // Ensure price is a number
   const discount = parseFloat(data?.discount) || 0; // Ensure discount is a number
   const priceDiscount = discount > 0 ? (price - (price * discount) / 100).toFixed(2) : price.toFixed(2);
+
+
+  const handleBuyNow = async () => {
+    await handleAddToCart ();
+    navigate('/cart');
+  };
 
   return (
 
@@ -142,7 +152,7 @@ export default function ProductDetails({ data, language, fetchData }) {
               <>
                 <div className="Mobile-notes-section">
                   <h3 className="Mobile-notes-title" style={{ textAlign: 'center' }}>
-                    {data?.note_help || ''}
+                  {data?.note_help_top || ''}
                   </h3>
                   {Array.from({ length: quantity }, (_, index) => (
                     <textarea
@@ -173,14 +183,23 @@ export default function ProductDetails({ data, language, fetchData }) {
 
             {/* Action Buttons */}
             <div className="Mobile-button">
-              <button
+              {/* <button
                 className="Sell-button-pay"
                 onClick={handleAddToCart}
                 disabled={isLoading} >
                 {isLoading
                   ? (language === "ar" ? "جاري إضافة المنتج..." : "Adding product...")
                   : (language === "ar" ? "اشتري الآن" : "Buy Now")}
-              </button>
+              </button> */}
+                <div style={{ float: 'right', width: '95%', marginRight: '2.5%' }}>
+          <div className="Desktop-Sell-Row-name">
+            <button className='Desktop-Sell-button-btn' onClick={handleAddToCart}>إضافة للسلة</button>
+          </div>
+          <div className="Desktop-Sell-Row-price">
+            <button className='Desktop-Sell-button-pay' onClick={handleBuyNow}>اشتري الآن</button>
+          </div>
+        </div>
+
             </div>
           </>
         </div>

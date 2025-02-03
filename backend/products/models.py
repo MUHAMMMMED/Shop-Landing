@@ -35,22 +35,15 @@ class Product(models.Model):
     language = models.CharField(max_length=2, choices=[('ar', 'ar'),('en', 'en') ], default='ar')
     name = models.CharField(max_length=255)
     ssku = models.CharField(max_length=255, blank=True, null=True)
-
-
     description = models.TextField()
     details= models.TextField()
     price = models.IntegerField(default=0)
-    # models.DecimalField(max_digits=10, decimal_places=2)
-
     discount  = models.IntegerField(default=0)
     stock = models.IntegerField()
     cost = models.IntegerField(default=0)
-    # models.DecimalField(max_digits=10, decimal_places=2,default=0)
     stock_alarm = models.IntegerField(default=0)
     expiration_date_offer= models.DateField(blank=True, null=True)
-
     is_active_note = models.BooleanField(default=True)
-
     default_option = models.FloatField(default=0,blank=True, null=True)
     note_help_top = models.CharField(max_length=500, blank=True, null=True)
     note_help = models.CharField(max_length=500, blank=True, null=True)

@@ -9,7 +9,8 @@ from .serializers import *
 from django.shortcuts import get_object_or_404
 from .utils import get_price  
 from rest_framework.permissions import IsAuthenticated
- 
+from datetime import timedelta
+from django.utils import timezone
 
 class OrdersViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = [IsAuthenticated]
@@ -56,7 +57,6 @@ class Shipping_CompanyDash(viewsets.ModelViewSet):
  
   
 class ShippingAPIView(APIView):
-    
     def get(self, request, *args, **kwargs):
         company_id = kwargs.get('id')   
         try:
@@ -79,15 +79,19 @@ class Shipping_CompanyAPIView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
         except Cart.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
- 
+
+
 class OrderAPIView(APIView):
     def post(self, request):
         try:
-            # Step 1: Delete unpaid orders
-            Order.objects.filter(paid=False).delete()
-            # print('Step 1: Deleted unpaid orders')
+            # Step 1: Cancel unpaid orders
+            Order.objects.filter(paid=False).update(status='C')
 
-            # Step 2: Validate cart ID
+            # Step 2: Delete orders with status 'C' created more than 24 hours ago
+            time_limit = timezone.now() - timedelta(days=1)
+            Order.objects.filter(status='C', created_at__lt=time_limit).delete()
+
+            # Step 3: Validate cart ID
             cart_id = request.data.get("cartId")
             if not cart_id:
                 return Response({"error": "Cart ID is required"}, status=status.HTTP_400_BAD_REQUEST)
@@ -95,7 +99,6 @@ class OrderAPIView(APIView):
             cart = Cart.objects.filter(id=cart_id).first()
             if not cart:
                 return Response({"error": "Cart not found"}, status=status.HTTP_404_NOT_FOUND)
-            # print(f'Step 2: Validated Cart ID {cart_id}')
 
             name = request.data.get("name")
             phone = request.data.get("phone")
@@ -107,7 +110,7 @@ class OrderAPIView(APIView):
             shipping_id = request.data.get("Shipping")
            
             # Check if any required field is missing
-            if not all([name, phone, governorate, city, neighborhood, street, country_id,shipping_id]):
+            if not all([name, phone, city, neighborhood, street, country_id, shipping_id]):
                 return Response({"error": "All fields (name, phone, governorate, city, neighborhood, street, country) are required"}, 
                                  status=status.HTTP_400_BAD_REQUEST)
 
@@ -120,7 +123,7 @@ class OrderAPIView(APIView):
             session_key = cart.session_id
             customer, created = Customers.objects.get_or_create(session_key=session_key)
             if not created:
-                customer.name =  name
+                customer.name = name
                 customer.phone = phone
                 customer.country = country
                 customer.governorate = governorate
@@ -128,22 +131,16 @@ class OrderAPIView(APIView):
                 customer.neighborhood = neighborhood
                 customer.street = street
                 customer.save()
-            # print(f'Step 4: Customer {"created" if created else "updated"}')
 
             # Step 5: Validate and fetch shipping company
-            shipping_id = request.data.get("Shipping")
-            if not shipping_id:
-                return Response({"error": "Shipping ID is required"}, status=status.HTTP_400_BAD_REQUEST)
-
             shipping_company = Shipping_Company.objects.filter(id=shipping_id).first()
             if not shipping_company:
                 return Response({"error": "Shipping company not found"}, status=status.HTTP_404_NOT_FOUND)
-            # print(f'Step 5: Validated Shipping Company ID {shipping_id}')
 
             # Step 6: Create order
             order = Order.objects.create(
                 session_key=cart.session_id,
-                customer = customer,
+                customer=customer,
                 shipping_company=shipping_company,
                 shipping=shipping_company.shipping_price
             )
@@ -165,20 +162,15 @@ class OrderAPIView(APIView):
                 )
                 order_item.notes.set(item.notes.all())
                 order_item.save()
-            # print('Step 7: Added cart items to the order')
 
             # Store Order ID in session
             request.session['order_id'] = order.id
-            # print(f'Session updated with order ID {order.id}')
 
             return Response({"orderId": order.id}, status=status.HTTP_201_CREATED)
 
         except Exception as e:
-            print(f"Error: {str(e)}")
             return Response({"error": f"An unexpected error occurred: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-
-# 
+ 
  
 class UpdateStatus(APIView):
     permission_classes = [IsAuthenticated]  
@@ -296,7 +288,8 @@ class InvoiceDetail(APIView):
 
         try:
             # Fetch the order instance
-            order = Order.objects.get(session_key=session_id)
+          
+            order = Order.objects.filter(session_key=session_id).order_by('-id').first()
         except Order.DoesNotExist:
             return Response({"error": "Order not found"}, status=status.HTTP_404_NOT_FOUND)
 

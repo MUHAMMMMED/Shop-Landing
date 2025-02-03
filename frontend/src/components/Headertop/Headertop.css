@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header-top-web {
+    display: block;
+    width: 100%;
+    float: right;
+}
+
+.header-top-mbile {
+    display: none;
+}
+
+@media screen and (max-width: 785px) {
+    .header-top-web {
+        display: none;
+    }
+
+    .header-top-mbile {
+        display: block;
+        float: right;
+        width: 100%;
+    }
+
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    direction: rtl;
+    z-index: 60;
+
+}
+
+.header-top-right {
+    display: flex;
+    align-items: center;
+    display: block;
+}
+
+.header-top-left {
+    display: flex;
+    align-items: center;
+    display: block;
+}
+
+.header-top-logo {
+
+    float: right;
+
+}
+
+.header-top-logo img {
+    height: 50px;
+    margin-left: 80px;
+}
+
+.header-top-nav-text {
+    float: right;
+}
+
+.header-top-nav-menu ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.header-top-nav-menu li {
+
+    margin: 0 25px;
+}
+
+.header-top-nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.header-top-left a,
+.header-top-right .cart-icon {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: -25px;
+}
+
+.header-top-left .header-top-cart-icon {
+    position: relative;
+    margin-left: 20px;
+    color: #000;
+    display: block;
+
+}
+
+.header-top-left .header-top-cart-icon span {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-size: 12px;
+    background-color: #fc0000;
+    display: block;
+
+}
+
+.header-top-ShoppingBag {
+    float: left;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff !important;
+    padding: 6px 8px !important;
+    color: #000 !important;
+    font-size: 20px !important;
+    display: block;
+
+}
+
+.header-top-ShoppingBag:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+
+}
+
+
+
+
+.header-top-login {
+    float: left;
+    border-radius: 50%;
+    background-color: #ffffff !important;
+    margin-top: 13px !important;
+    color: #000 !important;
+    font-size: 20px !important;
+    margin-right: 15px;
+    display: block;
+
+}
+
+.header-top-cart-togg {
+    float: left;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #fff !important;
+    padding: 6px 8px !important;
+    color: #000 !important;
+    font-size: 20px !important;
+    display: block;
+    margin-right: 25px;
+    margin-top: -8px;
+}

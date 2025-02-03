@@ -4,6 +4,7 @@ import { trackFacebookPixel } from '../../utils/pixels/facebookPixel';
 import { trackGooglePixel } from '../../utils/pixels/googlePixel';
 import { trackSnapchatPixel } from '../../utils/pixels/snapchatPixel';
 import { trackTikTokPixel } from '../../utils/pixels/tiktokPixel';
+import Headertop from '../Headertop/Headertop';
 import ProductSEO from '../SEO/ProductSEO';
 import Sections from "./components/Sections/Sections";
 export default function LandingPage({ page, fetchData }) {
@@ -34,7 +35,7 @@ export default function LandingPage({ page, fetchData }) {
   return (
   
     <div>
-
+<Headertop/>
  <ProductSEO
 title={ page?.title}
 description={page?.description}
