@@ -20,9 +20,7 @@ DOMAIN = settings.DOMAIN
 # Set the Stripe API key
 stripe.api_key = settings.STRIPE_SECRET_KEY
  
- 
-
-
+  
 # Configure logging
 logger = logging.getLogger(__name__)
 
@@ -67,7 +65,7 @@ def create_checkout_session(request: Request):
             mode='payment',
  
             success_url=f'{DOMAIN}/success',
-            # cancel_url=f'{DOMAIN}/cancel',
+            cancel_url=f'{DOMAIN}/cancel',
             metadata={
                 "session_id": session_id,
                 "order_id": order_id,
