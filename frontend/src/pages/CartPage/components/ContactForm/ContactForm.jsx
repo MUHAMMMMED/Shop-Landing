@@ -127,9 +127,9 @@ const ContactForm = ({ cart, fetchCart, language }) => {
     if (!orderData.neighborhood) {
       formErrors.neighborhood = language === 'ar' ? 'يرجى إدخال الحي.' : 'Please enter the neighborhood.';
     }
-    if (!orderData.street) {
-      formErrors.street = language === 'ar' ? 'يرجى إدخال الشارع.' : 'Please enter the street.';
-    }
+    // if (!orderData.street) {
+    //   formErrors.street = language === 'ar' ? 'يرجى إدخال الشارع.' : 'Please enter the street.';
+    // }
     if (!orderData.Shipping) {
       formErrors.Shipping = language === 'ar' ? 'يرجى إدخال طريقة الشحن.' : 'Please enter the shipping method.';
     }
@@ -245,7 +245,7 @@ const ContactForm = ({ cart, fetchCart, language }) => {
                   </div></label>
                 {shippingCountries.length > 0 && (
                   <select
-                    className="SElect"
+                    className="SElect-one"
                     id="country"
                     name={language === 'ar' ? 'الدولة' : 'Country'}
                     value={orderData.country}

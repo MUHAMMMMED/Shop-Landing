@@ -110,7 +110,7 @@ class OrderAPIView(APIView):
             shipping_id = request.data.get("Shipping")
            
             # Check if any required field is missing
-            if not all([name, phone, city, neighborhood, street, country_id, shipping_id]):
+            if not all([name, phone, city, neighborhood,  country_id, shipping_id]):
                 return Response({"error": "All fields (name, phone, governorate, city, neighborhood, street, country) are required"}, 
                                  status=status.HTTP_400_BAD_REQUEST)
 

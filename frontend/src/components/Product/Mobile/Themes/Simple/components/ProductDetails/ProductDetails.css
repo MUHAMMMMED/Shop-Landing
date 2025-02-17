@@ -74,17 +74,23 @@
   align-items: center;
   gap: 10px;
   width: 100%;
+ 
+
 }
 
 .Mobile-price {
+  display: block;
   font-size: 24px;
   color: #9081f6;
   font-weight: 700;
+ 
 }
 
 .Mobile-original-price {
   text-decoration: line-through;
   color: grey;
+  display: block;
+ 
 }
 
 .Mobile-discount {
@@ -92,8 +98,31 @@
   color: white;
   padding: 4px 8px;
   border-radius: 50px;
+  display: block;
 
 }
+.Mobile-price-section,
+.Mobile-price,
+.Mobile-original-price,
+.Mobile-discount {
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .Mobile-price-section {
+    display: flex !important;
+  }
+
+  .Mobile-price,
+  .Mobile-original-price,
+  .Mobile-discount {
+    display: block !important;
+  }
+}
+
+
+
+
 
 .Mobile-viewers {
   margin-top: 5px;

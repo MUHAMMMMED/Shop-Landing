@@ -34,7 +34,7 @@ form h3 {
 }
 
 .ContactForm-input-text,
-.SElect,
+.SElect-one,
 textarea {
   width: 100% !important;
   padding: 15px;
@@ -46,7 +46,7 @@ textarea {
   text-align: right;
 }
 
-.SElect{
+.SElect-one{
   text-align: center;
 }
 .react-tel-input .form-control {
@@ -233,15 +233,15 @@ textarea {
     background-color: white !important;
   }
 
-  .SElect {
+  .SElect-one {
     width: 100% !important;
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    float: right;
-    text-align: right;
+    padding: 15px!important;
+    margin-bottom: 15px!important;
+    border: 1px solid #ccc!important;
+    border-radius: 4px!important;
+    box-sizing: border-box!important;
+    float: right!important;
+    text-align: right!important;
   }
 
   .react-tel-input .form-control {

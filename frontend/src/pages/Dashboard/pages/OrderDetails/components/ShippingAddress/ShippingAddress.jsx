@@ -15,8 +15,6 @@ const ShippingAddress = ({ order }) => {
             <p style={{ padding: '10px' }}>
                 {customer.neighborhood ? customer.neighborhood : 'neighborhood information not provided'}
             </p>
-
-
             {/* <p style={{ padding: '10px' }}>
                 {customer.city ? customer.city : 'City information not provided'}
             </p> */}

@@ -85,16 +85,16 @@ export default function ProductDetails({ data, language, fetchData }) {
 
         {price > 0 && (
           <div className="Mobile-price-section">
-            <span className="Mobile-price">
-              <span className={`Desktop-priceDiscount ${language === 'ar' ? 'rtl' : 'ltr'}`}>
+            <div className="Mobile-price">
+              <div className={`Desktop-priceDiscount ${language === 'ar' ? 'rtl' : 'ltr'}`}>
                 {discount > 0 ? priceDiscount : price}
-              </span>
-              <span className='currency'>{data?.currency}</span>
-            </span>
+              </div>
+              <div className='currency'>{data?.currency}</div>
+            </div>
             {discount > 0 && (
               <>
-                <span className="Mobile-original-price">{price.toFixed(2)}</span>
-                <span className="Mobile-discount">{discount} % {language === 'ar' ? 'خصم' : 'OFF'}</span>
+                <div className="Mobile-original-price">{price.toFixed(2)}</div>
+                <div className="Mobile-discount">{discount} % {language === 'ar' ? 'خصم' : 'OFF'}</div>
               </>
             )}
           </div>
