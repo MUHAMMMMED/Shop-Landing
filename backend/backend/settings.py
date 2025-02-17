@@ -167,7 +167,6 @@ MEDIA_ROOT = '/app/media/'
 # Stripe settings
 STRIPE_SECRET_KEY = os.getenv('STRIPE_API_KEY')
 STRIPE_WEBHOOK_SECRET = os.getenv('STRIPE_WEBHOOK_SECRET')
-
+ 
 # Other settings
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
- 
